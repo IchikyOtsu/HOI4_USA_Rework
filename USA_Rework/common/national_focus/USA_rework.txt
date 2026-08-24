@@ -844,6 +844,17 @@ focus_tree = {
 		available = { has_government = neutrality has_civil_war = no }
 		completion_reward = {
 			set_politics = { ruling_party = neutrality elections_allowed = no }
+			USA_douglas_macarthur = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { american_caesar }
+					}
+					promote_leader = yes
+				}
+				remove_unit_leader_role = yes
+			}
 			add_ideas = USA_rework_american_caesar_spirit
 			add_stability = 0.05
 		}
@@ -977,7 +988,19 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = USA_rework_continental_defense }
 		available = { has_government = democratic date > 1936.11.2 }
-		completion_reward = { add_ideas = USA_rework_landon_administration add_political_power = 120 country_event = { id = USA_rework.40 hours = 6 } }
+		completion_reward = {
+			create_country_leader = {
+				name = "Alf Landon"
+				desc = "POLITICS_ALF_LANDON_DESC"
+				picture = GFX_portrait_Alf_Landon
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = { staunch_constitutionalist }
+			}
+			add_ideas = USA_rework_landon_administration
+			add_political_power = 120
+			country_event = { id = USA_rework.40 hours = 6 }
+		}
 	}
 	focus = {
 		id = USA_rework_restore_gold_standard

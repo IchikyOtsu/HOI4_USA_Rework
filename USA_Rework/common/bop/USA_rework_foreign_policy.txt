@@ -13,7 +13,7 @@ USA_rework_foreign_policy = {
 
 	side = {
 		id = USA_rework_isolationism
-		icon = GFX_idea_generic_neutrality_focus
+		icon = GFX_idea_generic_constitutional_guarantees
 		range = {
 			id = USA_rework_bop_fortress_america
 			min = -1.0
@@ -37,7 +37,7 @@ USA_rework_foreign_policy = {
 
 	side = {
 		id = USA_rework_interventionism
-		icon = GFX_idea_generic_major_alliance
+		icon = GFX_idea_generic_volunteer_expedition_bonus
 		range = {
 			id = USA_rework_bop_limited_intervention
 			min = 0.20

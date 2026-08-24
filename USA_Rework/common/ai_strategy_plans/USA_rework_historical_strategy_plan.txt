@@ -1,0 +1,102 @@
+USA_rework_historical_plan = {
+	name = "USA Rework historical plan"
+	desc = "Historical behavior for the USA Rework focus tree"
+
+	allowed = {
+		original_tag = USA
+		has_focus_tree = USA_rework
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_focus_tree = USA_rework
+	}
+
+	abort = {
+		NOT = { has_focus_tree = USA_rework }
+	}
+
+	ai_national_focuses = {
+		# Reprise et réarmement initial, 1936-1939.
+		USA_rework_new_deal_continues
+		USA_rework_wpa
+		USA_rework_agricultural_adjustment
+		USA_rework_social_security
+		USA_rework_scientific_office
+		USA_rework_fair_labor_standards
+		USA_rework_war_department
+		USA_rework_neutrality_acts
+		USA_rework_limited_intervention
+		USA_rework_manhattan_groundwork
+		USA_rework_defense_industrial_base
+
+		# Préparation à la guerre, 1940-1941.
+		USA_rework_destroyers_for_bases
+		USA_rework_reelect_roosevelt
+		USA_rework_four_freedoms
+		USA_rework_two_ocean_navy
+		USA_rework_selective_training_act
+		USA_rework_army_modernization
+		USA_rework_army_air_corps
+		USA_rework_pacific_bases
+		USA_rework_lend_lease_act
+		USA_rework_arsenal_of_democracy
+		USA_rework_giant_wakes
+		USA_rework_usace_projects
+
+		# Conduite de la guerre mondiale.
+		USA_rework_rainbow_plans
+		USA_rework_joint_chiefs
+		USA_rework_army_ground_forces
+		USA_rework_strategic_air_forces
+		USA_rework_carrier_task_forces
+		USA_rework_combined_arms_doctrine
+		USA_rework_strategic_bombing_campaign
+		USA_rework_amphibious_warfare
+		USA_rework_war_plans_division
+		USA_rework_wartime_industry
+		USA_rework_manhattan_project
+		USA_rework_victory_program
+
+		# Paix et ordre international.
+		USA_rework_gi_bill
+		USA_rework_bretton_woods
+		USA_rework_united_nations
+		USA_rework_orderly_demobilization
+		USA_rework_marshall_plan
+		USA_rework_containment
+		USA_rework_fair_deal
+		USA_rework_occupation_zones
+		USA_rework_truman_doctrine_focus
+		USA_rework_north_atlantic_treaty
+	}
+
+	focus_factors = {
+		USA_rework_suspend_persecution = 0
+		USA_rework_fortress_america = 0
+		USA_rework_america_first = 0
+		USA_rework_macarthur_plan = 0
+	}
+
+	traits = {
+		war_industrialist = 10
+		financial_expert = 5
+		silent_workhorse = 15
+	}
+
+	ai_strategy = {
+		type = support
+		id = "ENG"
+		value = 200
+	}
+
+	ai_strategy = {
+		type = support
+		id = "CHI"
+		value = 150
+	}
+
+	weight = {
+		factor = 100.0
+	}
+}

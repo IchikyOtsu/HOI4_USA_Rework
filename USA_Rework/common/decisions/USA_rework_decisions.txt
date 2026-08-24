@@ -393,7 +393,8 @@ USA_rework_administration_decisions = {
 		cost = 100
 		fire_only_once = yes
 		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
-		complete_effect = { add_ideas = USA_rework_george_marshall army_experience = 15 }
+		available = { NOT = { has_idea = george_marshall } }
+		complete_effect = { add_ideas = george_marshall army_experience = 15 }
 		ai_will_do = { factor = 5 }
 	}
 	USA_rework_appoint_henry_stimson = {
@@ -401,7 +402,8 @@ USA_rework_administration_decisions = {
 		cost = 100
 		fire_only_once = yes
 		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
-		complete_effect = { add_ideas = USA_rework_henry_stimson add_war_support = 0.03 }
+		available = { NOT = { has_idea = USA_henry_stimson } }
+		complete_effect = { add_ideas = USA_henry_stimson add_war_support = 0.03 }
 		ai_will_do = { factor = 5 }
 	}
 	USA_rework_appoint_william_knudsen = {
@@ -417,10 +419,10 @@ USA_rework_administration_decisions = {
 		cost = 100
 		fire_only_once = yes
 		visible = { has_country_flag = USA_rework_production_board_unlocked }
-		available = { date > 1942.1.1 }
+		available = { date > 1942.1.1 NOT = { has_idea = USA_donald_nelson } }
 		complete_effect = {
 			remove_ideas = USA_rework_william_knudsen
-			add_ideas = USA_rework_donald_nelson
+			add_ideas = USA_donald_nelson
 		}
 		ai_will_do = { factor = 6 }
 	}
@@ -429,7 +431,8 @@ USA_rework_administration_decisions = {
 		cost = 100
 		fire_only_once = yes
 		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
-		complete_effect = { add_ideas = USA_rework_ernest_king navy_experience = 15 }
+		available = { NOT = { has_idea = ernest_king } }
+		complete_effect = { add_ideas = ernest_king navy_experience = 15 }
 		ai_will_do = { factor = 4 }
 	}
 	USA_rework_appoint_henry_arnold = {
@@ -437,7 +440,8 @@ USA_rework_administration_decisions = {
 		cost = 100
 		fire_only_once = yes
 		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
-		complete_effect = { add_ideas = USA_rework_henry_arnold air_experience = 15 }
+		available = { NOT = { has_idea = henry_arnold } }
+		complete_effect = { add_ideas = henry_arnold air_experience = 15 }
 		ai_will_do = { factor = 4 }
 	}
 }
@@ -448,7 +452,11 @@ USA_rework_industrial_contracts = {
 		cost = 75
 		fire_only_once = yes
 		complete_effect = {
-			add_ideas = USA_rework_boeing_contract
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:USA_boeing_organization = { add_mio_size = 1 add_mio_funds = 500 }
+			}
+			else = { add_ideas = USA_rework_boeing_contract }
 			air_experience = 10
 		}
 		ai_will_do = { factor = 5 modifier = { factor = 2 has_war = yes } }
@@ -468,7 +476,11 @@ USA_rework_industrial_contracts = {
 		cost = 75
 		fire_only_once = yes
 		complete_effect = {
-			add_ideas = USA_rework_electric_boat_contract
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:USA_electric_boat_company_organization = { add_mio_size = 1 add_mio_funds = 500 }
+			}
+			else = { add_ideas = USA_rework_electric_boat_contract }
 			navy_experience = 10
 		}
 		ai_will_do = { factor = 4 }

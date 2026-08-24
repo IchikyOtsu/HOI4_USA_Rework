@@ -88,18 +88,18 @@ USA_rework_start_communist_civil_war = {
 	set_country_flag = USA_rework_civil_war_preparations_locked
 	if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
-		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.25 }
+		start_civil_war = { ruling_party = communism ideology = democratic size = 0.25 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
-		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.30 }
+		start_civil_war = { ruling_party = communism ideology = democratic size = 0.30 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
-		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.35 }
+		start_civil_war = { ruling_party = communism ideology = democratic size = 0.35 }
 	}
 	else = {
-		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.40 }
+		start_civil_war = { ruling_party = communism ideology = democratic size = 0.40 }
 	}
 }
 
@@ -107,18 +107,18 @@ USA_rework_start_fascist_civil_war = {
 	set_country_flag = USA_rework_civil_war_preparations_locked
 	if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
-		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.30 }
+		start_civil_war = { ruling_party = fascism ideology = democratic size = 0.30 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
-		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.35 }
+		start_civil_war = { ruling_party = fascism ideology = democratic size = 0.35 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
-		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.40 }
+		start_civil_war = { ruling_party = fascism ideology = democratic size = 0.40 }
 	}
 	else = {
-		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.45 }
+		start_civil_war = { ruling_party = fascism ideology = democratic size = 0.45 }
 	}
 }
 
@@ -126,18 +126,18 @@ USA_rework_start_macarthur_civil_war = {
 	set_country_flag = USA_rework_civil_war_preparations_locked
 	if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
-		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.25 }
+		start_civil_war = { ruling_party = neutrality ideology = democratic size = 0.25 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
-		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.30 }
+		start_civil_war = { ruling_party = neutrality ideology = democratic size = 0.30 }
 	}
 	else_if = {
 		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
-		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.35 }
+		start_civil_war = { ruling_party = neutrality ideology = democratic size = 0.35 }
 	}
 	else = {
-		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.40 }
+		start_civil_war = { ruling_party = neutrality ideology = democratic size = 0.40 }
 	}
 }
 

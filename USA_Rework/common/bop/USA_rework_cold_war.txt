@@ -13,7 +13,7 @@ USA_rework_cold_war = {
 
 	side = {
 		id = USA_rework_detente
-		icon = GFX_idea_generic_positive_trade_relations
+		icon = GFX_idea_generic_foreign_capital
 		range = {
 			id = USA_rework_bop_cooperative_order
 			min = -1.0
@@ -24,7 +24,7 @@ USA_rework_cold_war = {
 
 	side = {
 		id = USA_rework_global_containment
-		icon = GFX_idea_anti_comintern_pact
+		icon = GFX_idea_anti_soviet_pact
 		range = {
 			id = USA_rework_bop_active_containment
 			min = 0.30
