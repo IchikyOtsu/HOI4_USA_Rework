@@ -91,7 +91,7 @@ focus_tree = {
 		x = 43
 		y = 0
 		cost = 5
-		available = { has_country_flag = USA_rework_systems_initialized }
+		available = { has_completed_focus = USA_rework_new_deal_continues }
 		completion_reward = { USA_rework_shift_isolationist_small = yes add_stability = 0.03 }
 	}
 	focus = {
@@ -108,7 +108,7 @@ focus_tree = {
 			focus = USA_rework_macarthur_plan
 		}
 		available = {
-			has_country_flag = USA_rework_systems_initialized
+			has_completed_focus = USA_rework_new_deal_continues
 			NOT = { has_country_flag = USA_rework_political_route_chosen }
 			has_war_support > 0.20
 		}
@@ -204,7 +204,7 @@ focus_tree = {
 			focus = USA_rework_suspend_persecution
 			focus = USA_rework_macarthur_plan
 		}
-		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_completed_focus = USA_rework_new_deal_continues NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -505,7 +505,7 @@ focus_tree = {
 			focus = USA_rework_america_first
 			focus = USA_rework_macarthur_plan
 		}
-		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_completed_focus = USA_rework_new_deal_continues NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -645,7 +645,7 @@ focus_tree = {
 			focus = USA_rework_suspend_persecution
 			focus = USA_rework_macarthur_plan
 		}
-		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_completed_focus = USA_rework_new_deal_continues NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -791,7 +791,7 @@ focus_tree = {
 			focus = USA_rework_america_first
 		}
 		available = {
-			has_country_flag = USA_rework_systems_initialized
+			has_completed_focus = USA_rework_new_deal_continues
 			NOT = { has_country_flag = USA_rework_political_route_chosen }
 			OR = { has_stability < 0.55 fascism > 0.15 communism > 0.15 }
 		}
