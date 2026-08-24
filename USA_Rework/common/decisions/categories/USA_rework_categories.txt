@@ -27,3 +27,20 @@ USA_rework_reconstruction_decisions = {
 	allowed = { original_tag = USA }
 	visible = { has_country_flag = USA_rework_marshall_plan_unlocked }
 }
+
+USA_rework_administration_decisions = {
+	icon = generic_military_sphere
+	allowed = { original_tag = USA }
+	visible = {
+		OR = {
+			has_country_flag = USA_rework_war_cabinet_unlocked
+			has_country_flag = USA_rework_production_board_unlocked
+		}
+	}
+}
+
+USA_rework_cold_war_decisions = {
+	icon = generic_major_alliance
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_containment_policy }
+}

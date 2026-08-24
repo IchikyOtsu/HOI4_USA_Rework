@@ -12,6 +12,9 @@ Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désorma
 - le discours de la quarantaine, les Quatre Libertés, l'embargo japonais et la Charte de l'Atlantique ;
 - des événements liés à l'opinion, aux élections, à la France et au Japon ;
 - un endgame historique : GI Bill, Bretton Woods, ONU, plan Marshall et endiguement ;
+- un cabinet de guerre historique : Marshall, Stimson, Knudsen, Nelson, King et Arnold ;
+- une seconde Balance of Power d'après-guerre entre détente et endiguement mondial ;
+- la doctrine Truman, le pont aérien de Berlin, NSC-68, la Corée et Atomes pour la paix ;
 - les localisations française et anglaise ;
 - les deux descripteurs attendus par le launcher.
 

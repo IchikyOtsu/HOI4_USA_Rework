@@ -19,4 +19,12 @@ opinion_modifiers = {
 		value = 30
 		decay = 0.20
 	}
+	USA_rework_democratic_reconstruction_opinion = {
+		value = 40
+		decay = 0.20
+	}
+	USA_rework_security_assistance_opinion = {
+		value = 35
+		decay = 0.25
+	}
 }

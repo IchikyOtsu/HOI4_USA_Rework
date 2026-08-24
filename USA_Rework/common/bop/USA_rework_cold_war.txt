@@ -1,0 +1,35 @@
+USA_rework_cold_war = {
+	initial_value = 0.0
+	left_side = USA_rework_detente
+	right_side = USA_rework_global_containment
+	decision_category = USA_rework_cold_war_decisions
+
+	range = {
+		id = USA_rework_bop_guarded_coexistence
+		min = -0.30
+		max = 0.30
+		modifier = { political_power_factor = 0.05 research_speed_factor = 0.03 }
+	}
+
+	side = {
+		id = USA_rework_detente
+		icon = GFX_idea_generic_positive_trade_relations
+		range = {
+			id = USA_rework_bop_cooperative_order
+			min = -1.0
+			max = -0.30
+			modifier = { stability_factor = 0.10 trade_opinion_factor = 0.20 war_support_factor = -0.10 }
+		}
+	}
+
+	side = {
+		id = USA_rework_global_containment
+		icon = GFX_idea_anti_comintern_pact
+		range = {
+			id = USA_rework_bop_active_containment
+			min = 0.30
+			max = 1.0
+			modifier = { war_support_factor = 0.10 production_speed_arms_factory_factor = 0.10 political_power_factor = -0.05 }
+		}
+	}
+}

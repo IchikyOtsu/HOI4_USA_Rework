@@ -281,4 +281,159 @@ USA_rework_reconstruction_decisions = {
 		}
 		ai_will_do = { factor = 3 }
 	}
+	USA_rework_assume_occupation_duties = {
+		icon = generic_military_sphere
+		cost = 50
+		fire_only_once = yes
+		available = { date > 1945.1.1 num_occupied_states > 0 }
+		complete_effect = { add_ideas = USA_rework_occupation_duty add_political_power = -25 }
+		ai_will_do = { factor = 4 }
+	}
+	USA_rework_democratize_germany = {
+		icon = generic_support_democracy
+		cost = 75
+		fire_only_once = yes
+		available = { date > 1945.1.1 GER = { exists = yes } }
+		complete_effect = {
+			GER = { add_stability = 0.05 add_opinion_modifier = { target = ROOT modifier = USA_rework_democratic_reconstruction_opinion } }
+			add_political_power = 25
+		}
+		ai_will_do = { factor = 3 }
+	}
+	USA_rework_democratize_japan = {
+		icon = generic_support_democracy
+		cost = 75
+		fire_only_once = yes
+		available = { date > 1945.1.1 JAP = { exists = yes } }
+		complete_effect = {
+			JAP = { add_stability = 0.05 add_opinion_modifier = { target = ROOT modifier = USA_rework_democratic_reconstruction_opinion } }
+			add_political_power = 25
+		}
+		ai_will_do = { factor = 3 }
+	}
+}
+
+USA_rework_administration_decisions = {
+	USA_rework_appoint_george_marshall = {
+		icon = generic_army_support
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
+		complete_effect = { add_ideas = USA_rework_george_marshall army_experience = 15 }
+		ai_will_do = { factor = 5 }
+	}
+	USA_rework_appoint_henry_stimson = {
+		icon = generic_political_reform
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
+		complete_effect = { add_ideas = USA_rework_henry_stimson add_war_support = 0.03 }
+		ai_will_do = { factor = 5 }
+	}
+	USA_rework_appoint_william_knudsen = {
+		icon = generic_industry
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_production_board_unlocked }
+		complete_effect = { add_ideas = USA_rework_william_knudsen }
+		ai_will_do = { factor = 6 }
+	}
+	USA_rework_appoint_donald_nelson = {
+		icon = generic_production
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_production_board_unlocked }
+		available = { date > 1942.1.1 }
+		complete_effect = { add_ideas = USA_rework_donald_nelson }
+		ai_will_do = { factor = 6 }
+	}
+	USA_rework_appoint_ernest_king = {
+		icon = generic_navy
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
+		complete_effect = { add_ideas = USA_rework_ernest_king navy_experience = 15 }
+		ai_will_do = { factor = 4 }
+	}
+	USA_rework_appoint_henry_arnold = {
+		icon = generic_air
+		cost = 100
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_war_cabinet_unlocked }
+		complete_effect = { add_ideas = USA_rework_henry_arnold air_experience = 15 }
+		ai_will_do = { factor = 4 }
+	}
+}
+
+USA_rework_cold_war_decisions = {
+	USA_rework_truman_doctrine = {
+		icon = generic_support_democracy
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = 0.10 }
+			GRC = { add_offsite_building = { type = arms_factory level = 1 } add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
+			TUR = { add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
+			add_war_support = 0.03
+		}
+		ai_will_do = { factor = 8 }
+	}
+	USA_rework_berlin_airlift = {
+		icon = generic_positive_trade_relations
+		cost = 50
+		fire_only_once = yes
+		available = { date > 1948.1.1 }
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = 0.05 }
+			add_political_power = 50
+			add_stability = 0.02
+		}
+		ai_will_do = { factor = 8 }
+	}
+	USA_rework_adopt_nsc_68 = {
+		icon = generic_production
+		cost = 100
+		fire_only_once = yes
+		available = { date > 1950.1.1 }
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = 0.15 }
+			add_ideas = USA_rework_nsc_68_rearmament
+			add_war_support = 0.05
+		}
+		ai_will_do = { factor = 7 }
+	}
+	USA_rework_support_south_korea = {
+		icon = generic_military_sphere
+		cost = 75
+		days_re_enable = 365
+		available = { KOR = { exists = yes has_war = yes } }
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = 0.10 }
+			KOR = { add_offsite_building = { type = arms_factory level = 1 } add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
+			add_war_support = 0.03
+		}
+		ai_will_do = { factor = 8 }
+	}
+	USA_rework_atoms_for_peace = {
+		icon = generic_scientific_exchange
+		cost = 75
+		fire_only_once = yes
+		available = { date > 1952.1.1 }
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = -0.10 }
+			add_ideas = USA_rework_atoms_for_peace_spirit
+			add_stability = 0.03
+		}
+		ai_will_do = { factor = 3 }
+	}
+	USA_rework_pursue_diplomatic_detente = {
+		icon = generic_positive_trade_relations
+		cost = 50
+		days_re_enable = 180
+		complete_effect = {
+			add_power_balance_value = { id = USA_rework_cold_war value = -0.05 }
+			add_stability = 0.01
+		}
+		ai_will_do = { factor = 1 }
+	}
 }

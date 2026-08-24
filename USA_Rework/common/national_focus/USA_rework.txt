@@ -225,6 +225,7 @@ focus_tree = {
 			USA_rework_build_military_factory = yes
 			add_to_variable = { USA_rework_military_lobby = 8 }
 			set_country_flag = USA_rework_preparedness_unlocked
+			set_country_flag = USA_rework_production_board_unlocked
 		}
 	}
 	focus = {
@@ -282,7 +283,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		prerequisite = { focus = USA_rework_new_deal_continues }
-		completion_reward = { army_experience = 15 }
+		completion_reward = {
+			army_experience = 15
+			set_country_flag = USA_rework_war_cabinet_unlocked
+		}
 	}
 	focus = {
 		id = USA_rework_selective_training_act
@@ -445,7 +449,13 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_united_nations }
 		available = { date > 1946.1.1 }
-		completion_reward = { add_war_support = 0.05 add_ideas = USA_rework_containment_spirit set_country_flag = USA_rework_containment_policy }
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = USA_rework_containment_spirit
+			set_country_flag = USA_rework_containment_policy
+			remove_power_balance = { id = USA_rework_foreign_policy }
+			set_power_balance = { id = USA_rework_cold_war set_default = yes }
+		}
 	}
 	focus = {
 		id = USA_rework_north_atlantic_treaty

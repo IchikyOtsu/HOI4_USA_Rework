@@ -128,6 +128,38 @@ ideas = {
 			}
 		}
 
+		# Responsables historiques du cabinet de guerre et de la production.
+		USA_rework_george_marshall = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { experience_gain_army_factor = 0.10 planning_speed = 0.10 army_org_factor = 0.03 }
+		}
+		USA_rework_henry_stimson = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { political_power_factor = 0.05 war_support_factor = 0.08 drift_defence_factor = 0.10 }
+		}
+		USA_rework_william_knudsen = {
+			picture = GFX_idea_generic_industry
+			allowed = { original_tag = USA }
+			modifier = { conversion_cost_civ_to_mil_factor = -0.15 production_speed_arms_factory_factor = 0.08 }
+		}
+		USA_rework_donald_nelson = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.08 production_factory_efficiency_gain_factor = 0.05 }
+		}
+		USA_rework_ernest_king = {
+			picture = GFX_idea_generic_navy_cruiser
+			allowed = { original_tag = USA }
+			modifier = { experience_gain_navy_factor = 0.10 naval_coordination = 0.05 naval_invasion_prep_speed = 0.10 }
+		}
+		USA_rework_henry_arnold = {
+			picture = GFX_idea_generic_air_fighter
+			allowed = { original_tag = USA }
+			modifier = { experience_gain_air_factor = 0.10 air_mission_efficiency = 0.05 air_training_xp_gain_factor = 0.10 }
+		}
+
 		# Esprits temporaires des War Plans.
 		USA_rework_war_plan_orange_spirit = {
 			picture = GFX_idea_generic_position_armies
@@ -217,6 +249,21 @@ ideas = {
 			picture = GFX_idea_anti_comintern_pact
 			allowed = { original_tag = USA }
 			modifier = { war_support_factor = 0.10 drift_defence_factor = 0.20 }
+		}
+		USA_rework_occupation_duty = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { required_garrison_factor = -0.20 political_power_gain = -0.20 }
+		}
+		USA_rework_nsc_68_rearmament = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.10 production_speed_arms_factory_factor = 0.10 consumer_goods_factor = 0.03 }
+		}
+		USA_rework_atoms_for_peace_spirit = {
+			picture = GFX_idea_generic_scientific_exchange
+			allowed = { original_tag = USA }
+			modifier = { research_speed_factor = 0.03 nuclear_production_factor = 0.05 stability_factor = 0.03 }
 		}
 		USA_rework_nato_leadership = {
 			picture = GFX_idea_generic_major_alliance
