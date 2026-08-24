@@ -232,3 +232,15 @@ country_event = {
 		add_command_power = 25
 	}
 }
+
+news_event = {
+	id = USA_rework.50
+	title = USA_rework.50.t
+	desc = USA_rework.50.d
+	picture = GFX_report_event_fdr_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.50.a
+	}
+}
