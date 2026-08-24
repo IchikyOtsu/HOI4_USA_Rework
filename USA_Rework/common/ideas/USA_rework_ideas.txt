@@ -1,5 +1,107 @@
 ideas = {
 	country = {
+		# Esprits des chemins politiques alternatifs.
+		USA_rework_tolerated_left = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { political_power_factor = 0.03 stability_factor = -0.02 }
+		}
+		USA_rework_ware_group_spirit = {
+			picture = GFX_idea_generic_scientific_exchange
+			allowed = { original_tag = USA }
+			modifier = { research_speed_factor = 0.03 political_power_gain = 0.10 }
+		}
+		USA_rework_full_desegregation_spirit = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = 0.05 recruitable_population_factor = 0.05 }
+		}
+		USA_rework_union_representation_spirit = {
+			picture = GFX_idea_generic_industry
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.05 production_factory_efficiency_gain_factor = 0.05 }
+		}
+		USA_rework_red_america_spirit = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { recruitable_population_factor = 0.05 army_org_factor = 0.05 war_support_factor = 0.10 }
+		}
+		USA_rework_soviet_cooperation = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { research_speed_factor = 0.03 production_factory_efficiency_gain_factor = 0.05 }
+		}
+		USA_rework_chinese_cooperation = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { experience_gain_army_factor = 0.10 supply_consumption_factor = -0.05 }
+		}
+		USA_rework_global_emancipation = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { war_support_factor = 0.10 justify_war_goal_time = -0.20 }
+		}
+		USA_rework_america_first_spirit = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = 0.05 war_support_factor = -0.05 political_power_factor = 0.05 }
+		}
+		USA_rework_every_man_a_king = {
+			picture = GFX_idea_generic_consumer_goods
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = 0.05 consumer_goods_factor = 0.05 }
+		}
+		USA_rework_silver_legion = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { recruitable_population_factor = 0.03 army_org_factor = 0.03 stability_factor = -0.05 }
+		}
+		USA_rework_new_confederacy = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = 0.05 army_core_attack_factor = 0.10 army_core_defence_factor = 0.10 }
+		}
+		USA_rework_war_powers_spirit = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { justify_war_goal_time = -0.25 political_power_factor = 0.10 war_support_factor = 0.10 }
+		}
+		USA_rework_hemispheric_hegemony_spirit = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { army_attack_factor = 0.05 naval_invasion_prep_speed = 0.10 }
+		}
+		USA_rework_global_hegemony_spirit = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { army_attack_factor = 0.10 industrial_capacity_factory = 0.10 command_power_gain_mult = 0.10 }
+		}
+		USA_rework_macarthur_emergency_plan = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { command_power_gain_mult = 0.10 planning_speed = 0.05 stability_factor = -0.05 }
+		}
+		USA_rework_american_caesar_spirit = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { max_planning = 0.10 army_org_factor = 0.05 stability_factor = -0.15 }
+		}
+		USA_rework_restored_republic_spirit = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = 0.10 drift_defence_factor = 0.20 political_power_factor = 0.05 }
+		}
+		USA_rework_rebuilt_monroe_doctrine = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { army_core_attack_factor = 0.05 army_core_defence_factor = 0.10 war_support_factor = 0.05 }
+		}
+		USA_rework_continental_arsenal_spirit = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.10 production_speed_arms_factory_factor = 0.15 }
+		}
+
 		# Reprise économique : ces paliers remplacent progressivement la Dépression vanilla.
 		USA_rework_slow_recovery = {
 			picture = GFX_idea_generic_industry

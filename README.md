@@ -2,7 +2,9 @@
 
 Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désormais :
 
-- un arbre américain de 38 priorités, du New Deal à l'OTAN ;
+- un arbre américain de 63 priorités, du New Deal à l'OTAN ;
+- trois chemins alternatifs complets : CPUSA/Amérique rouge, America First/Silver Shirts et MacArthur/American Caesar ;
+- trois variantes de guerre civile avec reconstruction politique après la victoire ;
 - une Balance of Power isolationnisme/interventionnisme ;
 - un Congrès à soutien variable (100 sénateurs et 435 représentants) ;
 - cinq phases de mobilisation industrielle et une démobilisation ;

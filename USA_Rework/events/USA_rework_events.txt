@@ -102,3 +102,42 @@ country_event = {
 		set_country_flag = USA_rework_pacific_war_response
 	}
 }
+
+country_event = {
+	id = USA_rework.30
+	title = USA_rework.30.t
+	desc = USA_rework.30.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.30.a
+		add_war_support = 0.05
+		add_command_power = 10
+	}
+}
+
+country_event = {
+	id = USA_rework.31
+	title = USA_rework.31.t
+	desc = USA_rework.31.d
+	picture = GFX_report_event_japanese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.31.a
+		add_war_support = 0.05
+		add_command_power = 10
+	}
+}
+
+country_event = {
+	id = USA_rework.32
+	title = USA_rework.32.t
+	desc = USA_rework.32.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.32.a
+		add_war_support = 0.05
+		add_command_power = 10
+	}
+}

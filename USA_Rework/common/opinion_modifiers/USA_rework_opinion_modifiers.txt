@@ -27,4 +27,8 @@ opinion_modifiers = {
 		value = 35
 		decay = 0.25
 	}
+	USA_rework_ideological_alliance_opinion = {
+		value = 50
+		decay = 0.10
+	}
 }
