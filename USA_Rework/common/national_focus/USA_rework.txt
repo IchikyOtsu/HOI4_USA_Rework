@@ -6,7 +6,7 @@ focus_tree = {
 	# The New Deal Continues — tronc économique partagé
 	focus = {
 		id = USA_rework_new_deal_continues
-		icon = GFX_goal_generic_political_reform
+		icon = GFX_goal_generic_improve_relations
 		x = 20
 		y = 0
 		cost = 5
@@ -54,7 +54,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_rework_fair_labor_standards
-		icon = GFX_goal_generic_trade_unions
+		icon = GFX_goal_generic_construct_civ_factory
 		x = 17
 		y = 6
 		cost = 10
@@ -76,7 +76,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_rework_manhattan_groundwork
-		icon = GFX_goal_generic_nuclear
+		icon = GFX_goal_generic_scientific_exchange
 		x = 20
 		y = 6
 		cost = 7
@@ -120,7 +120,7 @@ focus_tree = {
 		available = { date > 1940.1.1 }
 		completion_reward = {
 			USA_rework_shift_interventionist_small = yes
-			add_navy_experience = 20
+			navy_experience = 20
 			ENG = { add_opinion_modifier = { target = ROOT modifier = USA_rework_destroyers_for_bases_opinion } }
 		}
 	}
@@ -253,7 +253,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		prerequisite = { focus = USA_rework_new_deal_continues }
-		completion_reward = { add_army_experience = 15 }
+		completion_reward = { army_experience = 15 }
 	}
 	focus = {
 		id = USA_rework_selective_training_act
@@ -273,7 +273,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
 		completion_reward = {
-			add_army_experience = 35
+			army_experience = 35
 			add_tech_bonus = { name = USA_rework_army_modernization_bonus bonus = 1.0 uses = 2 category = armor }
 		}
 	}
@@ -285,7 +285,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
 		completion_reward = {
-			add_air_experience = 35
+			air_experience = 35
 			add_tech_bonus = { name = USA_rework_air_corps_bonus bonus = 1.0 uses = 2 category = light_air }
 		}
 	}
@@ -301,7 +301,7 @@ focus_tree = {
 			USA_rework_build_dockyard = yes
 			USA_rework_build_dockyard = yes
 			USA_rework_build_dockyard = yes
-			add_navy_experience = 25
+			navy_experience = 25
 		}
 	}
 	focus = {
@@ -336,7 +336,7 @@ focus_tree = {
 	# Victoire, reconstruction et ordre international d'après-guerre
 	focus = {
 		id = USA_rework_manhattan_project
-		icon = GFX_goal_generic_nuclear
+		icon = GFX_goal_generic_scientific_exchange
 		x = 15
 		y = 16
 		cost = 10

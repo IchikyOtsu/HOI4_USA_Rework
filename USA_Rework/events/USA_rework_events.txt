@@ -26,7 +26,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = USA_rework.2.a
-		trigger = { stability > 0.49 }
+		trigger = { has_stability > 0.49 }
 		USA_rework_gain_medium_congress_support = yes
 		add_political_power = 50
 	}

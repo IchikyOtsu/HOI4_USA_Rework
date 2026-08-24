@@ -127,7 +127,7 @@ USA_rework_war_plans = {
 		cost = 50
 		days_remove = 60
 		available = { JAP = { exists = yes } }
-		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_orange_spirit days = 180 } add_navy_experience = 15 }
+		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_orange_spirit days = 180 } navy_experience = 15 }
 		ai_will_do = { factor = 2 modifier = { factor = 5 JAP = { has_war_with = ROOT } } }
 	}
 	USA_rework_prepare_war_plan_black = {
@@ -135,7 +135,7 @@ USA_rework_war_plans = {
 		cost = 50
 		days_remove = 60
 		available = { GER = { exists = yes } }
-		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_black_spirit days = 180 } add_army_experience = 15 }
+		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_black_spirit days = 180 } army_experience = 15 }
 		ai_will_do = { factor = 2 modifier = { factor = 5 GER = { has_war_with = ROOT } } }
 	}
 	USA_rework_prepare_rainbow_five = {
