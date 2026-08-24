@@ -1,0 +1,130 @@
+USA_rework_initialize_systems = {
+	if = {
+		limit = { NOT = { has_country_flag = USA_rework_systems_initialized } }
+		set_country_flag = USA_rework_systems_initialized
+		set_variable = { USA_rework_senate_support = 76 }
+		set_variable = { USA_rework_house_support = 334 }
+		set_variable = { USA_rework_public_isolationism = 70 }
+		set_variable = { USA_rework_business_lobby = 0 }
+		set_variable = { USA_rework_labor_lobby = 0 }
+		set_variable = { USA_rework_farm_lobby = 0 }
+		set_variable = { USA_rework_military_lobby = 0 }
+		set_variable = { USA_rework_mobilization_phase = 0 }
+		set_power_balance = { id = USA_rework_foreign_policy set_default = yes }
+		add_ideas = USA_rework_peacetime_economy
+	}
+}
+
+USA_rework_gain_small_congress_support = {
+	add_to_variable = { USA_rework_senate_support = 3 }
+	add_to_variable = { USA_rework_house_support = 15 }
+	if = { limit = { check_variable = { USA_rework_senate_support > 100 } } set_variable = { USA_rework_senate_support = 100 } }
+	if = { limit = { check_variable = { USA_rework_house_support > 435 } } set_variable = { USA_rework_house_support = 435 } }
+}
+
+USA_rework_gain_medium_congress_support = {
+	add_to_variable = { USA_rework_senate_support = 5 }
+	add_to_variable = { USA_rework_house_support = 25 }
+	if = { limit = { check_variable = { USA_rework_senate_support > 100 } } set_variable = { USA_rework_senate_support = 100 } }
+	if = { limit = { check_variable = { USA_rework_house_support > 435 } } set_variable = { USA_rework_house_support = 435 } }
+}
+
+USA_rework_lose_small_congress_support = {
+	subtract_from_variable = { USA_rework_senate_support = 3 }
+	subtract_from_variable = { USA_rework_house_support = 15 }
+}
+
+USA_rework_shift_isolationist_small = {
+	add_power_balance_value = { id = USA_rework_foreign_policy value = -0.05 }
+	add_to_variable = { USA_rework_public_isolationism = 3 }
+}
+
+USA_rework_shift_isolationist_large = {
+	add_power_balance_value = { id = USA_rework_foreign_policy value = -0.20 }
+	add_to_variable = { USA_rework_public_isolationism = 10 }
+}
+
+USA_rework_shift_interventionist_small = {
+	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.05 }
+	subtract_from_variable = { USA_rework_public_isolationism = 3 }
+}
+
+USA_rework_shift_interventionist_medium = {
+	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.15 }
+	subtract_from_variable = { USA_rework_public_isolationism = 8 }
+}
+
+USA_rework_shift_interventionist_large = {
+	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.30 }
+	subtract_from_variable = { USA_rework_public_isolationism = 15 }
+}
+
+USA_rework_build_infrastructure = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT }
+		add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+	}
+}
+
+USA_rework_build_civilian_factory = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT free_building_slots = { building = industrial_complex size > 0 } }
+		add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+	}
+}
+
+USA_rework_build_military_factory = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT free_building_slots = { building = arms_factory size > 0 } }
+		add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+	}
+}
+
+USA_rework_build_dockyard = {
+	random_owned_controlled_state = {
+		limit = { is_core_of = ROOT is_coastal = yes free_building_slots = { building = dockyard size > 0 } }
+		add_building_construction = { type = dockyard level = 1 instant_build = yes }
+	}
+}
+
+USA_rework_advance_mobilization_phase = {
+	if = {
+		limit = { has_idea = USA_rework_peacetime_economy }
+		remove_ideas = USA_rework_peacetime_economy
+		add_ideas = USA_rework_preparedness_economy
+		set_variable = { USA_rework_mobilization_phase = 1 }
+	}
+	else_if = {
+		limit = { has_idea = USA_rework_preparedness_economy }
+		remove_ideas = USA_rework_preparedness_economy
+		add_ideas = USA_rework_limited_mobilization
+		set_variable = { USA_rework_mobilization_phase = 2 }
+	}
+	else_if = {
+		limit = { has_idea = USA_rework_limited_mobilization }
+		remove_ideas = USA_rework_limited_mobilization
+		add_ideas = USA_rework_war_production
+		set_variable = { USA_rework_mobilization_phase = 3 }
+	}
+	else_if = {
+		limit = { has_idea = USA_rework_war_production }
+		remove_ideas = USA_rework_war_production
+		add_ideas = USA_rework_total_war_production
+		set_variable = { USA_rework_mobilization_phase = 4 }
+	}
+}
+
+USA_rework_demobilize_one_phase = {
+	if = {
+		limit = { has_idea = USA_rework_total_war_production }
+		remove_ideas = USA_rework_total_war_production
+		add_ideas = USA_rework_war_production
+		set_variable = { USA_rework_mobilization_phase = 3 }
+	}
+	else_if = {
+		limit = { has_idea = USA_rework_war_production }
+		remove_ideas = USA_rework_war_production
+		add_ideas = USA_rework_limited_mobilization
+		set_variable = { USA_rework_mobilization_phase = 2 }
+	}
+}

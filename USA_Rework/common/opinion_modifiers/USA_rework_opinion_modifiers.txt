@@ -1,0 +1,10 @@
+opinion_modifiers = {
+	USA_rework_destroyers_for_bases_opinion = {
+		value = 25
+		decay = 0.25
+	}
+	USA_rework_marshall_aid_opinion = {
+		value = 50
+		decay = 0.25
+	}
+}

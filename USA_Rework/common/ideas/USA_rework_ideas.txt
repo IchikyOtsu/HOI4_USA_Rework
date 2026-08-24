@@ -1,12 +1,198 @@
 ideas = {
 	country = {
-		USA_rework_industrial_mobilization = {
+		# Reprise économique : ces paliers remplacent progressivement la Dépression vanilla.
+		USA_rework_slow_recovery = {
 			picture = GFX_idea_generic_industry
 			allowed = { original_tag = USA }
 			modifier = {
-				consumer_goods_factor = -0.05
-				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = 0.20
+				recruitable_population_factor = -0.40
+				political_power_gain = -0.20
 			}
+		}
+		USA_rework_slow_growth = {
+			picture = GFX_idea_generic_industry
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = 0.10
+				recruitable_population_factor = -0.20
+			}
+		}
+
+		# Mobilisation industrielle en cinq phases.
+		USA_rework_peacetime_economy = {
+			picture = GFX_idea_generic_consumer_goods
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_arms_factory_factor = -0.15
+			}
+		}
+		USA_rework_preparedness_economy = {
+			picture = GFX_idea_generic_industry
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		USA_rework_limited_mobilization = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_arms_factory_factor = 0.10
+				conversion_cost_civ_to_mil_factor = -0.10
+			}
+		}
+		USA_rework_war_production = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				industrial_capacity_factory = 0.10
+				mobilization_speed = 0.10
+			}
+		}
+		USA_rework_total_war_production = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = -0.10
+				production_speed_arms_factory_factor = 0.50
+				industrial_capacity_factory = 0.20
+				production_speed_industrial_complex_factor = -0.20
+			}
+		}
+
+		# Politique étrangère et défense.
+		USA_rework_lend_lease_program = {
+			picture = GFX_idea_generic_positive_trade_relations
+			allowed = { original_tag = USA }
+			modifier = {
+				lend_lease_tension = -0.30
+				trade_opinion_factor = 0.10
+			}
+		}
+		USA_rework_arsenal_of_democracy_spirit = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		USA_rework_fortress_america_spirit = {
+			picture = GFX_idea_generic_fortify_city
+			allowed = { original_tag = USA }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				army_core_defence_factor = 0.10
+				war_support_factor = -0.10
+			}
+		}
+		USA_rework_continental_defense_spirit = {
+			picture = GFX_idea_generic_fortify_city
+			allowed = { original_tag = USA }
+			modifier = {
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.20
+				max_dig_in = 5
+			}
+		}
+		USA_rework_pacific_defense = {
+			picture = GFX_idea_generic_navy_cruiser
+			allowed = { original_tag = USA }
+			modifier = {
+				naval_invasion_capacity = 10
+				naval_invasion_prep_speed = 0.20
+				max_planning = 0.05
+			}
+		}
+		USA_rework_joint_chiefs_spirit = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = {
+				planning_speed = 0.15
+				max_planning = 0.10
+				command_power_gain_mult = 0.10
+			}
+		}
+
+		# Esprits temporaires des War Plans.
+		USA_rework_war_plan_orange_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { army_attack_factor = 0.05 naval_invasion_prep_speed = 0.20 planning_speed = 0.15 }
+		}
+		USA_rework_war_plan_black_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { army_attack_factor = 0.05 army_defence_factor = 0.05 planning_speed = 0.20 }
+		}
+		USA_rework_rainbow_five_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { army_attack_factor = 0.10 army_defence_factor = 0.10 max_planning = 0.10 naval_invasion_prep_speed = 0.25 }
+		}
+
+		# Crises intérieures et lobbies.
+		USA_rework_business_lobby_cost = {
+			picture = GFX_idea_generic_consumer_goods
+			allowed = { original_tag = USA }
+			modifier = { consumer_goods_factor = 0.05 }
+		}
+		USA_rework_labor_lobby_cost = {
+			picture = GFX_idea_generic_trade_unions
+			allowed = { original_tag = USA }
+			modifier = { production_speed_arms_factory_factor = -0.05 }
+		}
+		USA_rework_military_lobby_cost = {
+			picture = GFX_idea_generic_military_sphere
+			allowed = { original_tag = USA }
+			modifier = { political_power_gain = -0.30 }
+		}
+		USA_rework_house_divided = {
+			picture = GFX_idea_generic_political_reform
+			allowed = { original_tag = USA }
+			modifier = { stability_factor = -0.10 political_power_gain = -0.10 }
+		}
+
+		# Guerre et après-guerre.
+		USA_rework_manhattan_project_spirit = {
+			picture = GFX_idea_generic_nuclear
+			allowed = { original_tag = USA }
+			modifier = { production_speed_nuclear_reactor_factor = 0.25 nuclear_production_factor = 0.10 }
+		}
+		USA_rework_victory_program_spirit = {
+			picture = GFX_idea_generic_production
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.10 industrial_capacity_dockyard = 0.10 mobilization_speed = 0.20 }
+		}
+		USA_rework_gi_bill_spirit = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = { research_speed_factor = 0.05 stability_factor = 0.05 monthly_population = 0.10 }
+		}
+		USA_rework_bretton_woods_spirit = {
+			picture = GFX_idea_generic_positive_trade_relations
+			allowed = { original_tag = USA }
+			modifier = { trade_opinion_factor = 0.15 political_power_factor = 0.05 }
+		}
+		USA_rework_pax_americana = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { political_power_factor = 0.10 trade_opinion_factor = 0.20 }
+		}
+		USA_rework_containment_spirit = {
+			picture = GFX_idea_anti_comintern_pact
+			allowed = { original_tag = USA }
+			modifier = { war_support_factor = 0.10 drift_defence_factor = 0.20 }
+		}
+		USA_rework_nato_leadership = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { command_power_gain_mult = 0.10 research_speed_factor = 0.05 }
 		}
 	}
 }

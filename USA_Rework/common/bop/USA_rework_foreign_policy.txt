@@ -1,0 +1,61 @@
+USA_rework_foreign_policy = {
+	initial_value = -0.60
+	left_side = USA_rework_isolationism
+	right_side = USA_rework_interventionism
+	decision_category = USA_rework_foreign_policy_decisions
+
+	range = {
+		id = USA_rework_bop_cautious
+		min = -0.20
+		max = 0.20
+		modifier = { research_speed_factor = 0.05 }
+	}
+
+	side = {
+		id = USA_rework_isolationism
+		icon = GFX_idea_generic_neutrality_focus
+		range = {
+			id = USA_rework_bop_fortress_america
+			min = -1.0
+			max = -0.60
+			modifier = {
+				production_speed_industrial_complex_factor = 0.25
+				stability_factor = 0.10
+				war_support_factor = -0.10
+			}
+		}
+		range = {
+			id = USA_rework_bop_neutrality
+			min = -0.60
+			max = -0.20
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				war_support_factor = -0.05
+			}
+		}
+	}
+
+	side = {
+		id = USA_rework_interventionism
+		icon = GFX_idea_generic_major_alliance
+		range = {
+			id = USA_rework_bop_limited_intervention
+			min = 0.20
+			max = 0.60
+			modifier = {
+				war_support_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		range = {
+			id = USA_rework_bop_arsenal_democracy
+			min = 0.60
+			max = 1.0
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				industrial_capacity_factory = 0.10
+				war_support_factor = 0.10
+			}
+		}
+	}
+}

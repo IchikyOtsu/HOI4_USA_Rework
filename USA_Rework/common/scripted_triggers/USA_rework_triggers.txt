@@ -1,0 +1,17 @@
+USA_rework_has_basic_congress_majority = {
+	check_variable = { USA_rework_senate_support > 50 }
+	check_variable = { USA_rework_house_support > 217 }
+}
+
+USA_rework_has_supermajority = {
+	check_variable = { USA_rework_senate_support > 65 }
+	check_variable = { USA_rework_house_support > 289 }
+}
+
+USA_rework_is_interventionist = {
+	has_power_balance = { id = USA_rework_foreign_policy }
+	power_balance_value = {
+		id = USA_rework_foreign_policy
+		value > 0.19
+	}
+}

@@ -1,0 +1,71 @@
+on_actions = {
+	on_monthly_pulse = {
+		effect = {
+			every_country = {
+				limit = { original_tag = USA has_country_flag = USA_rework_systems_initialized }
+				if = {
+					limit = {
+						check_variable = { USA_rework_public_isolationism > 60 }
+						power_balance_value = { id = USA_rework_foreign_policy value > 0.39 }
+						NOT = { has_idea = USA_rework_house_divided }
+					}
+					add_ideas = USA_rework_house_divided
+				}
+				if = {
+					limit = {
+						has_idea = USA_rework_house_divided
+						OR = {
+							check_variable = { USA_rework_public_isolationism < 51 }
+							power_balance_value = { id = USA_rework_foreign_policy value < 0.30 }
+						}
+					}
+					remove_ideas = USA_rework_house_divided
+				}
+				if = {
+					limit = { date > 1938.11.1 NOT = { has_country_flag = USA_rework_election_1938 } }
+					set_country_flag = USA_rework_election_1938
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = { date > 1940.11.1 NOT = { has_country_flag = USA_rework_election_1940 } }
+					set_country_flag = USA_rework_election_1940
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = { date > 1942.11.1 NOT = { has_country_flag = USA_rework_election_1942 } }
+					set_country_flag = USA_rework_election_1942
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = { date > 1944.11.1 NOT = { has_country_flag = USA_rework_election_1944 } }
+					set_country_flag = USA_rework_election_1944
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = { date > 1946.11.1 NOT = { has_country_flag = USA_rework_election_1946 } }
+					set_country_flag = USA_rework_election_1946
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = { date > 1948.11.1 NOT = { has_country_flag = USA_rework_election_1948 } }
+					set_country_flag = USA_rework_election_1948
+					country_event = { id = USA_rework.2 days = 1 }
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = USA_rework_fall_of_france_seen }
+						FRA = { surrender_progress > 0.80 }
+					}
+					country_event = { id = USA_rework.10 days = 1 }
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = USA_rework_pacific_war_response }
+					JAP = { has_war_with = ROOT }
+					}
+					country_event = { id = USA_rework.11 days = 1 }
+				}
+			}
+		}
+	}
+}

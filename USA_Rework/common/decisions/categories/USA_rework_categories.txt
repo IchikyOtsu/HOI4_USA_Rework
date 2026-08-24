@@ -1,0 +1,29 @@
+USA_rework_congress_decisions = {
+	icon = generic_political_reform
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_systems_initialized }
+}
+
+USA_rework_foreign_policy_decisions = {
+	icon = generic_neutrality_focus
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_systems_initialized }
+}
+
+USA_rework_mobilization_decisions = {
+	icon = generic_production
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_systems_initialized }
+}
+
+USA_rework_war_plans = {
+	icon = generic_position_armies
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_war_plans_unlocked }
+}
+
+USA_rework_reconstruction_decisions = {
+	icon = generic_positive_trade_relations
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_marshall_plan_unlocked }
+}

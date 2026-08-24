@@ -1,10 +1,15 @@
 # USA Rework — mod Hearts of Iron IV
 
-Base jouable pour refaire l'arbre de priorités des États-Unis. Elle contient :
+Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désormais :
 
-- un arbre américain alternatif (`common/national_focus/USA_rework.txt`) ;
-- une idée nationale et une décision de démonstration ;
-- les textes français associés ;
+- un arbre américain de plus de 30 priorités, du New Deal à l'OTAN ;
+- une Balance of Power isolationnisme/interventionnisme ;
+- un Congrès à soutien variable (100 sénateurs et 435 représentants) ;
+- cinq phases de mobilisation industrielle et une démobilisation ;
+- les War Plans Orange, Black et Rainbow Five ;
+- des événements liés à l'opinion, aux élections, à la France et au Japon ;
+- un endgame historique : GI Bill, Bretton Woods, ONU, plan Marshall et endiguement ;
+- les localisations française et anglaise ;
 - les deux descripteurs attendus par le launcher.
 
 ## Installer le mod
@@ -26,10 +31,23 @@ Le mod n'altère pas les fichiers d'installation de HOI4. Désactivez-le simplem
 | Ajouter des bonus nationaux | `USA_Rework/common/ideas/USA_rework_ideas.txt` |
 | Ajouter des décisions | `USA_Rework/common/decisions/USA_rework_decisions.txt` |
 | Modifier les noms et descriptions | `USA_Rework/localisation/french/USA_rework_l_french.yml` |
+| Régler la Balance of Power | `USA_Rework/common/bop/USA_rework_foreign_policy.txt` |
+| Régler les effets réutilisables | `USA_Rework/common/scripted_effects/USA_rework_effects.txt` |
+| Modifier les événements | `USA_Rework/events/USA_rework_events.txt` |
 
 Les identifiants ajoutés commencent par `USA_rework_` pour éviter les collisions avec HOI4 ou d'autres mods. Après chaque modification, relancez le jeu et consultez `Documents/Paradox Interactive/Hearts of Iron IV/logs/error.log` s'il y a une erreur de script. Pour que les accents s'affichent correctement, enregistrez les fichiers de localisation en **UTF-8 avec BOM**.
 
 Une localisation anglaise de secours est également présente dans `USA_Rework/localisation/english/`.
+
+## Tester le rework
+
+Le premier focus, **Poursuivre le New Deal**, initialise le Congrès, la Balance of Power et la phase économique de temps de paix. Il faut donc le terminer avant d'évaluer les décisions du mod. Pour un test rapide, lancez HOI4 avec `-debug`, ouvrez la console avec `²`, puis utilisez `focus.autocomplete` et `decision.nochecks`. Après le test, vérifiez `Documents/Paradox Interactive/Hearts of Iron IV/logs/error.log` et `game.log`.
+
+La cible de compatibilité est HOI4 **1.17.x**. *Man the Guns* et *By Blood Alone* sont recommandés pour retrouver l'environnement de jeu ayant inspiré le rework, mais le mod ne déclare actuellement aucune dépendance DLC stricte.
+
+## Périmètre actuel
+
+La passe actuelle privilégie le parcours historique démocrate, la préparation à la guerre et l'après-1945. Les interfaces graphiques personnalisées, les personnages remaniés, les MIO historiques et la guerre civile dynamique à plusieurs factions restent à implémenter : ils nécessitent des assets dédiés et une campagne de tests séparée.
 
 ## Première extension conseillée
 
