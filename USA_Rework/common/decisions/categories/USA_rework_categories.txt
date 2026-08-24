@@ -45,6 +45,20 @@ USA_rework_administration_decisions = {
 	}
 }
 
+USA_rework_civil_war_preparations = {
+	icon = generic_military_sphere
+	allowed = { original_tag = USA }
+	visible = {
+		has_country_flag = USA_rework_systems_initialized
+		NOT = { has_country_flag = USA_rework_civil_war_preparations_locked }
+		OR = {
+			has_completed_focus = USA_rework_end_monarchism
+			has_completed_focus = USA_rework_ally_silver_shirts
+			has_completed_focus = USA_rework_macarthur_plan
+		}
+	}
+}
+
 USA_rework_cold_war_decisions = {
 	icon = generic_major_alliance
 	allowed = { original_tag = USA }

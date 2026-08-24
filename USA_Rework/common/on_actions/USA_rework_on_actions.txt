@@ -50,7 +50,7 @@ on_actions = {
 				if = {
 					limit = { date > 1940.11.1 NOT = { has_country_flag = USA_rework_election_1940 } }
 					set_country_flag = USA_rework_election_1940
-					country_event = { id = USA_rework.2 days = 1 }
+					country_event = { id = USA_rework.3 days = 1 }
 				}
 				if = {
 					limit = { date > 1942.11.1 NOT = { has_country_flag = USA_rework_election_1942 } }
@@ -60,7 +60,7 @@ on_actions = {
 				if = {
 					limit = { date > 1944.11.1 NOT = { has_country_flag = USA_rework_election_1944 } }
 					set_country_flag = USA_rework_election_1944
-					country_event = { id = USA_rework.2 days = 1 }
+					country_event = { id = USA_rework.4 days = 1 }
 				}
 				if = {
 					limit = { date > 1946.11.1 NOT = { has_country_flag = USA_rework_election_1946 } }
@@ -70,7 +70,7 @@ on_actions = {
 				if = {
 					limit = { date > 1948.11.1 NOT = { has_country_flag = USA_rework_election_1948 } }
 					set_country_flag = USA_rework_election_1948
-					country_event = { id = USA_rework.2 days = 1 }
+					country_event = { id = USA_rework.5 days = 1 }
 				}
 				if = {
 					limit = {

@@ -11,6 +11,7 @@ USA_rework_initialize_systems = {
 		set_variable = { USA_rework_military_lobby = 0 }
 		set_variable = { USA_rework_mobilization_phase = 0 }
 		set_variable = { USA_rework_lend_lease_capacity = 0 }
+		set_variable = { USA_rework_civil_war_preparedness = 0 }
 		set_power_balance = { id = USA_rework_foreign_policy set_default = yes }
 		add_ideas = USA_rework_peacetime_economy
 	}
@@ -79,6 +80,65 @@ USA_rework_clamp_political_variables = {
 	if = { limit = { check_variable = { USA_rework_house_support < 0 } } set_variable = { USA_rework_house_support = 0 } }
 	if = { limit = { check_variable = { USA_rework_public_isolationism > 100 } } set_variable = { USA_rework_public_isolationism = 100 } }
 	if = { limit = { check_variable = { USA_rework_public_isolationism < 0 } } set_variable = { USA_rework_public_isolationism = 0 } }
+	if = { limit = { check_variable = { USA_rework_civil_war_preparedness > 30 } } set_variable = { USA_rework_civil_war_preparedness = 30 } }
+	if = { limit = { check_variable = { USA_rework_civil_war_preparedness < 0 } } set_variable = { USA_rework_civil_war_preparedness = 0 } }
+}
+
+USA_rework_start_communist_civil_war = {
+	set_country_flag = USA_rework_civil_war_preparations_locked
+	if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
+		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.25 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
+		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.30 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
+		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.35 }
+	}
+	else = {
+		start_civil_war = { ruling_party = communism ideology = ROOT size = 0.40 }
+	}
+}
+
+USA_rework_start_fascist_civil_war = {
+	set_country_flag = USA_rework_civil_war_preparations_locked
+	if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
+		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.30 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
+		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.35 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
+		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.40 }
+	}
+	else = {
+		start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.45 }
+	}
+}
+
+USA_rework_start_macarthur_civil_war = {
+	set_country_flag = USA_rework_civil_war_preparations_locked
+	if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 29 } }
+		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.25 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 19 } }
+		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.30 }
+	}
+	else_if = {
+		limit = { check_variable = { USA_rework_civil_war_preparedness > 9 } }
+		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.35 }
+	}
+	else = {
+		start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.40 }
+	}
 }
 
 USA_rework_build_infrastructure = {

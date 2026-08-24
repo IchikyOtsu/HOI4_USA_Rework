@@ -439,6 +439,49 @@ USA_rework_administration_decisions = {
 	}
 }
 
+USA_rework_civil_war_preparations = {
+	USA_rework_secure_federal_arsenals = {
+		icon = generic_military_sphere
+		cost = 50
+		fire_only_once = yes
+		available = { has_civil_war = no }
+		complete_effect = {
+			add_to_variable = { USA_rework_civil_war_preparedness = 10 }
+			army_experience = 10
+			add_stability = -0.02
+			USA_rework_clamp_political_variables = yes
+		}
+		ai_will_do = { factor = 8 }
+	}
+	USA_rework_court_state_governors = {
+		icon = generic_political_reform
+		cost = 60
+		fire_only_once = yes
+		available = { has_civil_war = no }
+		complete_effect = {
+			add_to_variable = { USA_rework_civil_war_preparedness = 10 }
+			USA_rework_gain_small_congress_support = yes
+			add_political_power = -15
+			USA_rework_clamp_political_variables = yes
+		}
+		ai_will_do = { factor = 7 }
+	}
+	USA_rework_prepare_national_guard = {
+		icon = generic_army_support
+		cost = 75
+		fire_only_once = yes
+		available = { has_civil_war = no }
+		complete_effect = {
+			add_to_variable = { USA_rework_civil_war_preparedness = 10 }
+			add_manpower = 50000
+			add_command_power = 10
+			add_stability = -0.03
+			USA_rework_clamp_political_variables = yes
+		}
+		ai_will_do = { factor = 6 }
+	}
+}
+
 USA_rework_cold_war_decisions = {
 	USA_rework_truman_doctrine = {
 		icon = generic_support_democracy

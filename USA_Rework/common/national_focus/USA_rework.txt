@@ -553,7 +553,7 @@ focus_tree = {
 			add_ideas = USA_rework_full_desegregation_spirit
 			set_country_flag = USA_rework_congress_suspended
 			remove_power_balance = { id = USA_rework_foreign_policy }
-			start_civil_war = { ruling_party = communism ideology = ROOT size = 0.40 }
+			USA_rework_start_communist_civil_war = yes
 			country_event = { id = USA_rework.30 hours = 6 }
 		}
 	}
@@ -571,7 +571,7 @@ focus_tree = {
 			add_ideas = USA_rework_union_representation_spirit
 			set_country_flag = USA_rework_congress_suspended
 			remove_power_balance = { id = USA_rework_foreign_policy }
-			start_civil_war = { ruling_party = communism ideology = ROOT size = 0.45 }
+			USA_rework_start_communist_civil_war = yes
 			country_event = { id = USA_rework.30 hours = 6 }
 		}
 	}
@@ -717,7 +717,7 @@ focus_tree = {
 			set_country_flag = USA_rework_fascist_civil_war
 			set_country_flag = USA_rework_congress_suspended
 			remove_power_balance = { id = USA_rework_foreign_policy }
-			start_civil_war = { ruling_party = fascism ideology = ROOT size = 0.45 }
+			USA_rework_start_fascist_civil_war = yes
 			country_event = { id = USA_rework.31 hours = 6 }
 		}
 	}
@@ -815,7 +815,7 @@ focus_tree = {
 			set_country_flag = USA_rework_macarthur_civil_war
 			set_country_flag = USA_rework_congress_suspended
 			remove_power_balance = { id = USA_rework_foreign_policy }
-			start_civil_war = { ruling_party = neutrality ideology = ROOT size = 0.40 }
+			USA_rework_start_macarthur_civil_war = yes
 			country_event = { id = USA_rework.32 hours = 6 }
 		}
 	}
