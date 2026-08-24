@@ -372,7 +372,7 @@ USA_rework_cold_war_decisions = {
 		fire_only_once = yes
 		complete_effect = {
 			add_power_balance_value = { id = USA_rework_cold_war value = 0.10 }
-			GRC = { add_offsite_building = { type = arms_factory level = 1 } add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
+			GRE = { add_offsite_building = { type = arms_factory level = 1 } add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
 			TUR = { add_opinion_modifier = { target = ROOT modifier = USA_rework_security_assistance_opinion } }
 			add_war_support = 0.03
 		}
