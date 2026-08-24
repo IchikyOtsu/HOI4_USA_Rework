@@ -91,6 +91,7 @@ focus_tree = {
 		x = 43
 		y = 0
 		cost = 5
+		available = { has_country_flag = USA_rework_systems_initialized }
 		completion_reward = { USA_rework_shift_isolationist_small = yes add_stability = 0.03 }
 	}
 	focus = {
@@ -107,6 +108,7 @@ focus_tree = {
 			focus = USA_rework_macarthur_plan
 		}
 		available = {
+			has_country_flag = USA_rework_systems_initialized
 			NOT = { has_country_flag = USA_rework_political_route_chosen }
 			has_war_support > 0.20
 		}
@@ -202,7 +204,7 @@ focus_tree = {
 			focus = USA_rework_suspend_persecution
 			focus = USA_rework_macarthur_plan
 		}
-		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -297,7 +299,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_war_department
 		icon = GFX_goal_generic_military_sphere
-		x = 20
+		x = 16
 		y = 0
 		cost = 5
 		completion_reward = {
@@ -308,7 +310,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_selective_training_act
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 17
+		x = 13
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_war_department }
@@ -318,7 +320,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_army_modernization
 		icon = GFX_goal_generic_army_tanks
-		x = 15
+		x = 11
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
@@ -330,7 +332,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_army_air_corps
 		icon = GFX_goal_generic_air_fighter
-		x = 19
+		x = 15
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
@@ -342,7 +344,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_two_ocean_navy
 		icon = GFX_goal_generic_navy_battleship
-		x = 23
+		x = 19
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_war_department }
@@ -357,7 +359,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_pacific_bases
 		icon = GFX_goal_generic_navy_cruiser
-		x = 23
+		x = 19
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_two_ocean_navy }
@@ -366,8 +368,8 @@ focus_tree = {
 	focus = {
 		id = USA_rework_rainbow_plans
 		icon = GFX_goal_generic_position_armies
-		x = 19
-		y = 6
+		x = 15
+		y = 8
 		cost = 7
 		prerequisite = { focus = USA_rework_army_modernization }
 		prerequisite = { focus = USA_rework_pacific_bases }
@@ -376,8 +378,8 @@ focus_tree = {
 	focus = {
 		id = USA_rework_joint_chiefs
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 19
-		y = 8
+		x = 15
+		y = 10
 		cost = 10
 		prerequisite = { focus = USA_rework_rainbow_plans }
 		completion_reward = { add_ideas = USA_rework_joint_chiefs_spirit add_command_power = 50 }
@@ -480,7 +482,7 @@ focus_tree = {
 		id = USA_rework_north_atlantic_treaty
 		icon = GFX_goal_generic_major_alliance
 		x = 45
-		y = 26
+		y = 30
 		cost = 10
 		prerequisite = { focus = USA_rework_marshall_plan }
 		prerequisite = { focus = USA_rework_containment }
@@ -503,7 +505,7 @@ focus_tree = {
 			focus = USA_rework_america_first
 			focus = USA_rework_macarthur_plan
 		}
-		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -643,7 +645,7 @@ focus_tree = {
 			focus = USA_rework_suspend_persecution
 			focus = USA_rework_macarthur_plan
 		}
-		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
+		available = { has_country_flag = USA_rework_systems_initialized NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_political_route_chosen
@@ -789,6 +791,7 @@ focus_tree = {
 			focus = USA_rework_america_first
 		}
 		available = {
+			has_country_flag = USA_rework_systems_initialized
 			NOT = { has_country_flag = USA_rework_political_route_chosen }
 			OR = { has_stability < 0.55 fascism > 0.15 communism > 0.15 }
 		}
@@ -874,5 +877,325 @@ focus_tree = {
 			USA_rework_build_military_factory = yes
 			add_ideas = USA_rework_continental_arsenal_spirit
 		}
+	}
+
+	# -------------------------------------------------------------------------
+	# Extension militaire : spécialisation interarmes et planification mondiale
+	# -------------------------------------------------------------------------
+	focus = {
+		id = USA_rework_army_ground_forces
+		icon = GFX_goal_generic_army_tanks
+		x = 11
+		y = 6
+		cost = 7
+		prerequisite = { focus = USA_rework_army_modernization }
+		completion_reward = { add_ideas = USA_rework_army_ground_forces_spirit army_experience = 20 }
+	}
+	focus = {
+		id = USA_rework_strategic_air_forces
+		icon = GFX_goal_generic_air_fighter
+		x = 15
+		y = 6
+		cost = 7
+		prerequisite = { focus = USA_rework_army_air_corps }
+		completion_reward = { add_ideas = USA_rework_strategic_air_forces_spirit air_experience = 20 }
+	}
+	focus = {
+		id = USA_rework_carrier_task_forces
+		icon = GFX_goal_generic_navy_battleship
+		x = 19
+		y = 6
+		cost = 7
+		prerequisite = { focus = USA_rework_pacific_bases }
+		completion_reward = { add_ideas = USA_rework_carrier_task_forces_spirit navy_experience = 20 }
+	}
+	focus = {
+		id = USA_rework_combined_arms_doctrine
+		icon = GFX_goal_generic_position_armies
+		x = 11
+		y = 8
+		cost = 10
+		prerequisite = { focus = USA_rework_army_ground_forces }
+		completion_reward = { add_ideas = USA_rework_combined_arms_spirit army_experience = 30 }
+	}
+	focus = {
+		id = USA_rework_strategic_bombing_campaign
+		icon = GFX_goal_generic_air_fighter
+		x = 19
+		y = 8
+		cost = 10
+		prerequisite = { focus = USA_rework_strategic_air_forces }
+		completion_reward = { add_ideas = USA_rework_strategic_bombing_spirit air_experience = 30 }
+	}
+	focus = {
+		id = USA_rework_amphibious_warfare
+		icon = GFX_goal_generic_navy_cruiser
+		x = 19
+		y = 10
+		cost = 10
+		prerequisite = { focus = USA_rework_carrier_task_forces }
+		completion_reward = { add_ideas = USA_rework_amphibious_warfare_spirit navy_experience = 25 }
+	}
+	focus = {
+		id = USA_rework_war_plans_division
+		icon = GFX_goal_generic_position_armies
+		x = 15
+		y = 12
+		cost = 7
+		prerequisite = { focus = USA_rework_joint_chiefs }
+		prerequisite = { focus = USA_rework_amphibious_warfare }
+		completion_reward = {
+			set_country_flag = USA_rework_war_plans_unlocked
+			add_ideas = USA_rework_war_plans_division_spirit
+			add_command_power = 30
+		}
+	}
+
+	# -------------------------------------------------------------------------
+	# Alternative républicaine et reconstruction économique conservatrice
+	# -------------------------------------------------------------------------
+	focus = {
+		id = USA_rework_elect_alf_landon
+		icon = GFX_goal_generic_improve_relations
+		x = 46
+		y = 8
+		cost = 5
+		prerequisite = { focus = USA_rework_continental_defense }
+		available = { has_government = democratic date > 1936.11.2 }
+		completion_reward = { add_ideas = USA_rework_landon_administration add_political_power = 120 country_event = { id = USA_rework.40 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_restore_gold_standard
+		icon = GFX_goal_generic_consumer_goods
+		x = 46
+		y = 10
+		cost = 10
+		prerequisite = { focus = USA_rework_elect_alf_landon }
+		completion_reward = { add_ideas = USA_rework_gold_standard add_stability = 0.05 USA_rework_lose_small_congress_support = yes }
+	}
+	focus = {
+		id = USA_rework_unleash_private_enterprise
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 46
+		y = 12
+		cost = 10
+		prerequisite = { focus = USA_rework_restore_gold_standard }
+		completion_reward = { add_ideas = USA_rework_private_enterprise USA_rework_build_civilian_factory = yes USA_rework_build_civilian_factory = yes }
+	}
+	focus = {
+		id = USA_rework_hemisphere_trade_bloc
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 46
+		y = 14
+		cost = 10
+		prerequisite = { focus = USA_rework_unleash_private_enterprise }
+		completion_reward = { add_ideas = USA_rework_hemisphere_trade_bloc_spirit add_political_power = 100 set_country_flag = USA_rework_hemisphere_trade_unlocked }
+	}
+
+	# -------------------------------------------------------------------------
+	# Reconstruction, Fair Deal et première Guerre froide
+	# -------------------------------------------------------------------------
+	focus = {
+		id = USA_rework_fair_deal
+		icon = GFX_goal_generic_improve_relations
+		x = 39
+		y = 26
+		cost = 10
+		prerequisite = { focus = USA_rework_orderly_demobilization }
+		completion_reward = { add_ideas = USA_rework_fair_deal_spirit add_stability = 0.05 USA_rework_gain_small_congress_support = yes country_event = { id = USA_rework.41 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_occupation_zones
+		icon = GFX_goal_generic_military_sphere
+		x = 43
+		y = 26
+		cost = 7
+		prerequisite = { focus = USA_rework_marshall_plan }
+		available = { date > 1945.1.1 }
+		completion_reward = { add_ideas = USA_rework_occupation_authority set_country_flag = USA_rework_occupation_program_unlocked }
+	}
+	focus = {
+		id = USA_rework_truman_doctrine_focus
+		icon = GFX_goal_anti_comintern_pact
+		x = 47
+		y = 26
+		cost = 7
+		prerequisite = { focus = USA_rework_containment }
+		available = { date > 1947.1.1 }
+		completion_reward = { add_ideas = USA_rework_truman_doctrine_spirit set_country_flag = USA_rework_truman_doctrine_unlocked add_war_support = 0.05 country_event = { id = USA_rework.42 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_interstate_highway_system
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 39
+		y = 28
+		cost = 10
+		prerequisite = { focus = USA_rework_fair_deal }
+		completion_reward = { add_ideas = USA_rework_interstate_highways USA_rework_build_infrastructure = yes USA_rework_build_infrastructure = yes USA_rework_build_infrastructure = yes }
+	}
+	focus = {
+		id = USA_rework_democratize_defeated_powers
+		icon = GFX_goal_support_democracy
+		x = 43
+		y = 28
+		cost = 10
+		prerequisite = { focus = USA_rework_occupation_zones }
+		completion_reward = { add_ideas = USA_rework_democratic_reconstruction set_country_flag = USA_rework_democratization_unlocked add_political_power = 100 }
+	}
+	focus = {
+		id = USA_rework_berlin_airlift_focus
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 47
+		y = 28
+		cost = 7
+		prerequisite = { focus = USA_rework_truman_doctrine_focus }
+		available = { date > 1948.1.1 }
+		completion_reward = { set_country_flag = USA_rework_berlin_airlift_unlocked add_power_balance_value = { id = USA_rework_cold_war value = 0.05 } add_stability = 0.03 }
+	}
+	focus = {
+		id = USA_rework_atoms_for_peace_focus
+		icon = GFX_goal_generic_scientific_exchange
+		x = 41
+		y = 30
+		cost = 10
+		prerequisite = { focus = USA_rework_democratize_defeated_powers }
+		prerequisite = { focus = USA_rework_containment }
+		available = { date > 1952.1.1 }
+		completion_reward = { add_ideas = USA_rework_atoms_for_peace_spirit set_country_flag = USA_rework_atoms_for_peace_unlocked add_power_balance_value = { id = USA_rework_cold_war value = -0.10 } }
+	}
+	focus = {
+		id = USA_rework_nsc_68_focus
+		icon = GFX_goal_generic_production
+		x = 49
+		y = 30
+		cost = 10
+		prerequisite = { focus = USA_rework_berlin_airlift_focus }
+		available = { date > 1950.1.1 }
+		completion_reward = { add_ideas = USA_rework_nsc_68_rearmament set_country_flag = USA_rework_nsc_68_unlocked add_power_balance_value = { id = USA_rework_cold_war value = 0.15 } }
+	}
+	focus = {
+		id = USA_rework_space_program
+		icon = GFX_goal_generic_scientific_exchange
+		x = 41
+		y = 32
+		cost = 10
+		prerequisite = { focus = USA_rework_atoms_for_peace_focus }
+		completion_reward = { add_ideas = USA_rework_space_program_spirit add_research_slot = 1 set_country_flag = USA_rework_space_program_unlocked country_event = { id = USA_rework.43 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_korean_commitment
+		icon = GFX_goal_generic_military_sphere
+		x = 49
+		y = 32
+		cost = 10
+		prerequisite = { focus = USA_rework_nsc_68_focus }
+		available = { date > 1950.1.1 }
+		completion_reward = { add_ideas = USA_rework_korean_commitment_spirit add_war_support = 0.05 set_country_flag = USA_rework_korean_commitment_unlocked }
+	}
+
+	# -------------------------------------------------------------------------
+	# Fins de voies idéologiques et consolidation des nouveaux régimes
+	# -------------------------------------------------------------------------
+	focus = {
+		id = USA_rework_peoples_commonwealth
+		icon = GFX_goal_generic_major_alliance
+		x = 34
+		y = 16
+		cost = 10
+		prerequisite = { focus = USA_rework_demand_decolonization }
+		completion_reward = { add_ideas = USA_rework_peoples_commonwealth_spirit add_stability = 0.08 country_event = { id = USA_rework.44 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_workers_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 32
+		y = 18
+		cost = 10
+		prerequisite = { focus = USA_rework_peoples_commonwealth }
+		completion_reward = { add_ideas = USA_rework_workers_arsenal_spirit USA_rework_build_military_factory = yes USA_rework_build_military_factory = yes }
+	}
+	focus = {
+		id = USA_rework_liberate_the_americas
+		icon = GFX_goal_generic_demand_territory
+		x = 36
+		y = 18
+		cost = 10
+		prerequisite = { focus = USA_rework_peoples_commonwealth }
+		completion_reward = { add_ideas = USA_rework_revolutionary_diplomacy add_war_support = 0.08 set_country_flag = USA_rework_liberate_americas }
+	}
+	focus = {
+		id = USA_rework_world_revolution
+		icon = GFX_goal_generic_major_alliance
+		x = 34
+		y = 20
+		cost = 10
+		prerequisite = { focus = USA_rework_workers_arsenal }
+		prerequisite = { focus = USA_rework_liberate_the_americas }
+		completion_reward = { add_ideas = USA_rework_world_revolution_spirit add_political_power = 150 }
+	}
+	focus = {
+		id = USA_rework_subjugate_canada
+		icon = GFX_goal_generic_demand_territory
+		x = 52
+		y = 20
+		cost = 10
+		prerequisite = { focus = USA_rework_global_hegemony }
+		completion_reward = { create_wargoal = { type = annex_everything target = CAN } add_war_support = 0.05 }
+	}
+	focus = {
+		id = USA_rework_pacific_empire
+		icon = GFX_goal_generic_navy_battleship
+		x = 52
+		y = 22
+		cost = 10
+		prerequisite = { focus = USA_rework_subjugate_canada }
+		completion_reward = { create_wargoal = { type = annex_everything target = JAP } add_ideas = USA_rework_pacific_empire_spirit }
+	}
+	focus = {
+		id = USA_rework_imperial_american_century
+		icon = GFX_goal_generic_major_alliance
+		x = 52
+		y = 24
+		cost = 10
+		prerequisite = { focus = USA_rework_pacific_empire }
+		completion_reward = { add_ideas = USA_rework_imperial_american_century_spirit add_command_power = 50 country_event = { id = USA_rework.45 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_military_industrial_state
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 58
+		y = 12
+		cost = 10
+		prerequisite = { focus = USA_rework_continental_arsenal }
+		completion_reward = { add_ideas = USA_rework_military_industrial_state_spirit USA_rework_build_military_factory = yes USA_rework_build_military_factory = yes }
+	}
+	focus = {
+		id = USA_rework_guardians_of_republic
+		icon = GFX_goal_support_democracy
+		x = 56
+		y = 14
+		cost = 10
+		prerequisite = { focus = USA_rework_military_industrial_state }
+		available = { has_government = democratic }
+		completion_reward = { add_ideas = USA_rework_guardians_republic_spirit add_stability = 0.08 }
+	}
+	focus = {
+		id = USA_rework_permanent_emergency
+		icon = GFX_goal_generic_military_sphere
+		x = 60
+		y = 14
+		cost = 10
+		prerequisite = { focus = USA_rework_military_industrial_state }
+		available = { has_government = neutrality }
+		completion_reward = { add_ideas = USA_rework_permanent_emergency_spirit add_war_support = 0.08 country_event = { id = USA_rework.46 hours = 6 } }
+	}
+	focus = {
+		id = USA_rework_american_protectorates
+		icon = GFX_goal_generic_major_alliance
+		x = 58
+		y = 16
+		cost = 10
+		prerequisite = { focus = USA_rework_guardians_of_republic focus = USA_rework_permanent_emergency }
+		completion_reward = { add_ideas = USA_rework_american_protectorates_spirit add_political_power = 150 }
 	}
 }

@@ -50,3 +50,9 @@ USA_rework_cold_war_decisions = {
 	allowed = { original_tag = USA }
 	visible = { has_country_flag = USA_rework_containment_policy }
 }
+
+USA_rework_hemisphere_trade_decisions = {
+	icon = generic_positive_trade_relations
+	allowed = { original_tag = USA }
+	visible = { has_country_flag = USA_rework_hemisphere_trade_unlocked }
+}

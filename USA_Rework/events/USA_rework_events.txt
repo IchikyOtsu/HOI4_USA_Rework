@@ -141,3 +141,94 @@ country_event = {
 		add_command_power = 10
 	}
 }
+
+country_event = {
+	id = USA_rework.40
+	title = USA_rework.40.t
+	desc = USA_rework.40.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.40.a
+		add_stability = 0.03
+		add_to_variable = { USA_rework_business_lobby = 10 }
+	}
+}
+
+country_event = {
+	id = USA_rework.41
+	title = USA_rework.41.t
+	desc = USA_rework.41.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.41.a
+		add_political_power = 50
+		add_to_variable = { USA_rework_labor_lobby = 5 }
+	}
+}
+
+country_event = {
+	id = USA_rework.42
+	title = USA_rework.42.t
+	desc = USA_rework.42.d
+	picture = GFX_report_event_fdr_speech
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.42.a
+		add_power_balance_value = { id = USA_rework_cold_war value = 0.05 }
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = USA_rework.43
+	title = USA_rework.43.t
+	desc = USA_rework.43.d
+	picture = GFX_report_event_fdr_speech
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.43.a
+		add_stability = 0.02
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = USA_rework.44
+	title = USA_rework.44.t
+	desc = USA_rework.44.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.44.a
+		add_war_support = 0.03
+		add_political_power = 75
+	}
+}
+
+country_event = {
+	id = USA_rework.45
+	title = USA_rework.45.t
+	desc = USA_rework.45.d
+	picture = GFX_report_event_japanese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.45.a
+		add_war_support = 0.05
+		add_command_power = 25
+	}
+}
+
+country_event = {
+	id = USA_rework.46
+	title = USA_rework.46.t
+	desc = USA_rework.46.d
+	picture = GFX_report_event_usa_election
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.46.a
+		add_stability = -0.03
+		add_command_power = 25
+	}
+}

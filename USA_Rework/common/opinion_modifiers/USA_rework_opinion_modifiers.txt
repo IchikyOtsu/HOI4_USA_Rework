@@ -31,4 +31,8 @@ opinion_modifiers = {
 		value = 50
 		decay = 0.10
 	}
+	USA_rework_hemisphere_trade_opinion = {
+		value = 35
+		decay = 0.15
+	}
 }

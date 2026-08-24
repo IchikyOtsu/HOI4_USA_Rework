@@ -27,45 +27,58 @@ USA_rework_replenish_lend_lease_capacity = {
 USA_rework_gain_small_congress_support = {
 	add_to_variable = { USA_rework_senate_support = 3 }
 	add_to_variable = { USA_rework_house_support = 15 }
-	if = { limit = { check_variable = { USA_rework_senate_support > 100 } } set_variable = { USA_rework_senate_support = 100 } }
-	if = { limit = { check_variable = { USA_rework_house_support > 435 } } set_variable = { USA_rework_house_support = 435 } }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_gain_medium_congress_support = {
 	add_to_variable = { USA_rework_senate_support = 5 }
 	add_to_variable = { USA_rework_house_support = 25 }
-	if = { limit = { check_variable = { USA_rework_senate_support > 100 } } set_variable = { USA_rework_senate_support = 100 } }
-	if = { limit = { check_variable = { USA_rework_house_support > 435 } } set_variable = { USA_rework_house_support = 435 } }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_lose_small_congress_support = {
 	subtract_from_variable = { USA_rework_senate_support = 3 }
 	subtract_from_variable = { USA_rework_house_support = 15 }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_shift_isolationist_small = {
 	add_power_balance_value = { id = USA_rework_foreign_policy value = -0.05 }
 	add_to_variable = { USA_rework_public_isolationism = 3 }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_shift_isolationist_large = {
 	add_power_balance_value = { id = USA_rework_foreign_policy value = -0.20 }
 	add_to_variable = { USA_rework_public_isolationism = 10 }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_shift_interventionist_small = {
 	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.05 }
 	subtract_from_variable = { USA_rework_public_isolationism = 3 }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_shift_interventionist_medium = {
 	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.15 }
 	subtract_from_variable = { USA_rework_public_isolationism = 8 }
+	USA_rework_clamp_political_variables = yes
 }
 
 USA_rework_shift_interventionist_large = {
 	add_power_balance_value = { id = USA_rework_foreign_policy value = 0.30 }
 	subtract_from_variable = { USA_rework_public_isolationism = 15 }
+	USA_rework_clamp_political_variables = yes
+}
+
+USA_rework_clamp_political_variables = {
+	if = { limit = { check_variable = { USA_rework_senate_support > 100 } } set_variable = { USA_rework_senate_support = 100 } }
+	if = { limit = { check_variable = { USA_rework_senate_support < 0 } } set_variable = { USA_rework_senate_support = 0 } }
+	if = { limit = { check_variable = { USA_rework_house_support > 435 } } set_variable = { USA_rework_house_support = 435 } }
+	if = { limit = { check_variable = { USA_rework_house_support < 0 } } set_variable = { USA_rework_house_support = 0 } }
+	if = { limit = { check_variable = { USA_rework_public_isolationism > 100 } } set_variable = { USA_rework_public_isolationism = 100 } }
+	if = { limit = { check_variable = { USA_rework_public_isolationism < 0 } } set_variable = { USA_rework_public_isolationism = 0 } }
 }
 
 USA_rework_build_infrastructure = {

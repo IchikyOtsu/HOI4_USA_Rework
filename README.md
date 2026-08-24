@@ -2,7 +2,7 @@
 
 Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désormais :
 
-- un arbre américain de 63 priorités, du New Deal à l'OTAN ;
+- un arbre américain de 95 priorités, du New Deal à la course spatiale ;
 - trois chemins alternatifs complets : CPUSA/Amérique rouge, America First/Silver Shirts et MacArthur/American Caesar ;
 - trois variantes de guerre civile avec reconstruction politique après la victoire ;
 - une Balance of Power isolationnisme/interventionnisme ;
@@ -10,13 +10,16 @@ Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désorma
 - cinq phases de mobilisation industrielle et une démobilisation ;
 - les War Plans Orange, Black et Rainbow Five ;
 - les plans de contingence historiques Red, Green et Violet ;
+- les Army Ground Forces, les forces aériennes stratégiques, les groupes aéronavals et une doctrine amphibie ;
 - une capacité de prêt-bail limitée, partagée entre Grande-Bretagne, URSS et Chine ;
 - le discours de la quarantaine, les Quatre Libertés, l'embargo japonais et la Charte de l'Atlantique ;
 - des événements liés à l'opinion, aux élections, à la France et au Japon ;
-- un endgame historique : GI Bill, Bretton Woods, ONU, plan Marshall et endiguement ;
+- un chemin républicain Landon avec étalon-or, entreprise privée et bloc commercial panaméricain ;
+- un endgame historique : GI Bill, Fair Deal, Bretton Woods, ONU, plan Marshall, occupations et démocratisation ;
 - un cabinet de guerre historique : Marshall, Stimson, Knudsen, Nelson, King et Arnold ;
 - une seconde Balance of Power d'après-guerre entre détente et endiguement mondial ;
-- la doctrine Truman, le pont aérien de Berlin, NSC-68, la Corée et Atomes pour la paix ;
+- la doctrine Truman, le pont aérien de Berlin, l'OTAN, NSC-68, la Corée, Atomes pour la paix et le programme spatial ;
+- des conclusions développées pour les régimes communiste, fasciste et militariste ;
 - les localisations française et anglaise ;
 - les deux descripteurs attendus par le launcher.
 
