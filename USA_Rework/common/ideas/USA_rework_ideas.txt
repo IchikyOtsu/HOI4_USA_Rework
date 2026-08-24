@@ -1,0 +1,12 @@
+ideas = {
+	country = {
+		USA_rework_industrial_mobilization = {
+			picture = GFX_idea_generic_industry
+			allowed = { original_tag = USA }
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+	}
+}
