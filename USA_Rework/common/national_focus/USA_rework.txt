@@ -10,6 +10,7 @@ focus_tree = {
 		x = 26
 		y = 0
 		cost = 5
+		ai_will_do = { factor = 20 }
 		completion_reward = {
 			USA_rework_initialize_systems = yes
 			add_political_power = 150
@@ -92,6 +93,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 		available = { has_completed_focus = USA_rework_new_deal_continues }
+		ai_will_do = { factor = 12 }
 		completion_reward = { USA_rework_shift_isolationist_small = yes add_stability = 0.03 }
 	}
 	focus = {
@@ -128,6 +130,7 @@ focus_tree = {
 		cost = 7
 		prerequisite = { focus = USA_rework_limited_intervention }
 		available = { date > 1940.1.1 }
+		ai_will_do = { factor = 8 modifier = { factor = 2 is_historical_focus_on = yes } }
 		completion_reward = {
 			USA_rework_shift_interventionist_small = yes
 			navy_experience = 20
@@ -142,6 +145,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_four_freedoms }
 		available = { USA_rework_has_basic_congress_majority = yes }
+		ai_will_do = { factor = 10 modifier = { factor = 2 is_historical_focus_on = yes } }
 		completion_reward = {
 			USA_rework_shift_interventionist_large = yes
 			set_country_flag = USA_rework_lend_lease_unlocked
@@ -171,6 +175,7 @@ focus_tree = {
 		y = 8
 		cost = 5
 		prerequisite = { focus = USA_rework_reelect_roosevelt }
+		ai_will_do = { factor = 10 modifier = { factor = 2 is_historical_focus_on = yes } }
 		completion_reward = {
 			add_war_support = 0.10
 			USA_rework_shift_interventionist_medium = yes
@@ -185,6 +190,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_lend_lease_act }
 		available = { USA_rework_has_basic_congress_majority = yes has_war_support > 0.35 }
+		ai_will_do = { factor = 12 modifier = { factor = 2 has_war = yes } }
 		completion_reward = {
 			add_ideas = USA_rework_arsenal_of_democracy_spirit
 			set_country_flag = USA_rework_arsenal_unlocked
@@ -240,6 +246,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_fair_labor_standards }
 		available = { date > 1939.1.1 }
+		ai_will_do = { factor = 9 modifier = { factor = 2 date > 1940.1.1 } }
 		completion_reward = {
 			USA_rework_build_military_factory = yes
 			USA_rework_build_military_factory = yes
@@ -257,6 +264,7 @@ focus_tree = {
 		prerequisite = { focus = USA_rework_defense_industrial_base }
 		prerequisite = { focus = USA_rework_arsenal_of_democracy }
 		available = { date > 1940.1.1 }
+		ai_will_do = { factor = 12 modifier = { factor = 2 has_war = yes } }
 		completion_reward = {
 			USA_rework_build_military_factory = yes
 			USA_rework_build_military_factory = yes
@@ -286,6 +294,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_usace_projects }
 		available = { has_war = yes has_war_support > 0.50 USA_rework_has_basic_congress_majority = yes }
+		ai_will_do = { factor = 15 }
 		completion_reward = {
 			USA_rework_build_military_factory = yes
 			USA_rework_build_military_factory = yes
@@ -302,6 +311,7 @@ focus_tree = {
 		x = 16
 		y = 0
 		cost = 5
+		ai_will_do = { factor = 10 }
 		completion_reward = {
 			army_experience = 15
 			set_country_flag = USA_rework_war_cabinet_unlocked
@@ -349,6 +359,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = USA_rework_war_department }
 		available = { date > 1940.1.1 }
+		ai_will_do = { factor = 10 modifier = { factor = 2 JAP = { has_war = yes } } }
 		completion_reward = {
 			USA_rework_build_dockyard = yes
 			USA_rework_build_dockyard = yes
@@ -363,6 +374,7 @@ focus_tree = {
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_two_ocean_navy }
+		ai_will_do = { factor = 9 modifier = { factor = 2 JAP = { has_war = yes } } }
 		completion_reward = { add_ideas = USA_rework_pacific_defense set_country_flag = USA_rework_war_plans_unlocked }
 	}
 	focus = {
@@ -373,6 +385,7 @@ focus_tree = {
 		cost = 7
 		prerequisite = { focus = USA_rework_army_modernization }
 		prerequisite = { focus = USA_rework_pacific_bases }
+		ai_will_do = { factor = 9 modifier = { factor = 2 has_war = yes } }
 		completion_reward = { set_country_flag = USA_rework_rainbow_plans_unlocked add_command_power = 25 }
 	}
 	focus = {
@@ -382,6 +395,7 @@ focus_tree = {
 		y = 10
 		cost = 10
 		prerequisite = { focus = USA_rework_rainbow_plans }
+		ai_will_do = { factor = 10 modifier = { factor = 2 has_war = yes } }
 		completion_reward = { add_ideas = USA_rework_joint_chiefs_spirit add_command_power = 50 }
 	}
 
@@ -944,6 +958,7 @@ focus_tree = {
 		cost = 7
 		prerequisite = { focus = USA_rework_joint_chiefs }
 		prerequisite = { focus = USA_rework_amphibious_warfare }
+		ai_will_do = { factor = 8 modifier = { factor = 2 has_war = yes } }
 		completion_reward = {
 			set_country_flag = USA_rework_war_plans_unlocked
 			add_ideas = USA_rework_war_plans_division_spirit

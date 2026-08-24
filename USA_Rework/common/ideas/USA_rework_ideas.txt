@@ -530,5 +530,28 @@ ideas = {
 			allowed = { original_tag = USA }
 			modifier = { command_power_gain_mult = 0.10 trade_opinion_factor = 0.15 army_core_defence_factor = 0.05 }
 		}
+
+		# Contrats industriels historiques. Cette représentation reste disponible
+		# même sans le DLC qui active les organisations militaro-industrielles.
+		USA_rework_boeing_contract = {
+			picture = generic_air_fighter
+			allowed = { original_tag = USA }
+			modifier = { air_mission_efficiency = 0.05 production_factory_efficiency_gain_factor = 0.03 research_speed_factor = 0.01 }
+		}
+		USA_rework_general_motors_contract = {
+			picture = generic_production
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_factory = 0.05 production_speed_arms_factory_factor = 0.10 }
+		}
+		USA_rework_electric_boat_contract = {
+			picture = generic_navy_cruiser
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_dockyard = 0.08 naval_coordination = 0.05 }
+		}
+		USA_rework_bethlehem_steel_contract = {
+			picture = generic_industry
+			allowed = { original_tag = USA }
+			modifier = { industrial_capacity_dockyard = 0.05 production_speed_dockyard_factor = 0.10 }
+		}
 	}
 }

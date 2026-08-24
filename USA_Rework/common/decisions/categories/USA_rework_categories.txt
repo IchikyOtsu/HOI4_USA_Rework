@@ -45,6 +45,17 @@ USA_rework_administration_decisions = {
 	}
 }
 
+USA_rework_industrial_contracts = {
+	icon = generic_industry
+	allowed = { original_tag = USA }
+	visible = {
+		OR = {
+			has_country_flag = USA_rework_war_cabinet_unlocked
+			has_country_flag = USA_rework_production_board_unlocked
+		}
+	}
+}
+
 USA_rework_civil_war_preparations = {
 	icon = generic_military_sphere
 	allowed = { original_tag = USA }
