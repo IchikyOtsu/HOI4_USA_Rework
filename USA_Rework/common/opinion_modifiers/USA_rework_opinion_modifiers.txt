@@ -7,4 +7,16 @@ opinion_modifiers = {
 		value = 50
 		decay = 0.25
 	}
+	USA_rework_lend_lease_aid_opinion = {
+		value = 30
+		decay = 0.25
+	}
+	USA_rework_japanese_embargo_opinion = {
+		value = -50
+		decay = 0.25
+	}
+	USA_rework_atlantic_charter_opinion = {
+		value = 30
+		decay = 0.20
+	}
 }

@@ -74,6 +74,15 @@ ideas = {
 				trade_opinion_factor = 0.10
 			}
 		}
+		USA_rework_new_deal_coalition = {
+			picture = GFX_idea_generic_improve_relations
+			allowed = { original_tag = USA }
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
 		USA_rework_arsenal_of_democracy_spirit = {
 			picture = GFX_idea_generic_production
 			allowed = { original_tag = USA }
@@ -130,10 +139,30 @@ ideas = {
 			allowed = { original_tag = USA }
 			modifier = { army_attack_factor = 0.05 army_defence_factor = 0.05 planning_speed = 0.20 }
 		}
+		USA_rework_war_plan_red_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { naval_invasion_prep_speed = 0.20 naval_invasion_capacity = 5 planning_speed = 0.10 }
+		}
+		USA_rework_war_plan_green_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { army_core_attack_factor = 0.05 army_core_defence_factor = 0.10 planning_speed = 0.10 }
+		}
+		USA_rework_war_plan_violet_spirit = {
+			picture = GFX_idea_generic_position_armies
+			allowed = { original_tag = USA }
+			modifier = { army_defence_factor = 0.05 supply_consumption_factor = -0.05 planning_speed = 0.10 }
+		}
 		USA_rework_rainbow_five_spirit = {
 			picture = GFX_idea_generic_position_armies
 			allowed = { original_tag = USA }
 			modifier = { army_attack_factor = 0.10 army_defence_factor = 0.10 max_planning = 0.10 naval_invasion_prep_speed = 0.25 }
+		}
+		USA_rework_atlantic_charter_spirit = {
+			picture = GFX_idea_generic_major_alliance
+			allowed = { original_tag = USA }
+			modifier = { research_speed_factor = 0.03 trade_opinion_factor = 0.10 war_support_factor = 0.05 }
 		}
 
 		# Crises intérieures et lobbies.

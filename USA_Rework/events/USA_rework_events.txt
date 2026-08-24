@@ -52,6 +52,42 @@ country_event = {
 }
 
 country_event = {
+	id = USA_rework.12
+	title = USA_rework.12.t
+	desc = USA_rework.12.d
+	picture = GFX_report_event_fdr_speech
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.12.a
+		USA_rework_shift_interventionist_small = yes
+		add_war_support = 0.03
+	}
+	option = {
+		name = USA_rework.12.b
+		USA_rework_shift_isolationist_small = yes
+		add_stability = 0.02
+	}
+}
+
+country_event = {
+	id = USA_rework.13
+	title = USA_rework.13.t
+	desc = USA_rework.13.d
+	picture = GFX_report_event_french_surrender
+	is_triggered_only = yes
+	option = {
+		name = USA_rework.13.a
+		USA_rework_shift_interventionist_medium = yes
+		add_war_support = 0.05
+	}
+	option = {
+		name = USA_rework.13.b
+		USA_rework_shift_isolationist_small = yes
+		add_stability = 0.03
+	}
+}
+
+country_event = {
 	id = USA_rework.11
 	title = USA_rework.11.t
 	desc = USA_rework.11.d

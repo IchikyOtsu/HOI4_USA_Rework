@@ -10,8 +10,17 @@ USA_rework_initialize_systems = {
 		set_variable = { USA_rework_farm_lobby = 0 }
 		set_variable = { USA_rework_military_lobby = 0 }
 		set_variable = { USA_rework_mobilization_phase = 0 }
+		set_variable = { USA_rework_lend_lease_capacity = 0 }
 		set_power_balance = { id = USA_rework_foreign_policy set_default = yes }
 		add_ideas = USA_rework_peacetime_economy
+	}
+}
+
+USA_rework_replenish_lend_lease_capacity = {
+	add_to_variable = { USA_rework_lend_lease_capacity = 1 }
+	if = {
+		limit = { check_variable = { USA_rework_lend_lease_capacity > 10 } }
+		set_variable = { USA_rework_lend_lease_capacity = 10 }
 	}
 }
 

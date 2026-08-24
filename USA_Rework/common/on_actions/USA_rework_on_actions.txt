@@ -5,6 +5,27 @@ on_actions = {
 				limit = { original_tag = USA has_country_flag = USA_rework_systems_initialized }
 				if = {
 					limit = {
+						has_country_flag = USA_rework_lend_lease_unlocked
+						check_variable = { USA_rework_lend_lease_capacity < 10 }
+					}
+					USA_rework_replenish_lend_lease_capacity = yes
+				}
+				if = {
+					limit = { date > 1937.10.1 NOT = { has_country_flag = USA_rework_quarantine_speech_seen } }
+					set_country_flag = USA_rework_quarantine_speech_seen
+					country_event = { id = USA_rework.12 days = 1 }
+				}
+				if = {
+					limit = {
+						date > 1939.9.1
+						NOT = { has_country_flag = USA_rework_european_war_seen }
+						GER = { has_war = yes }
+					}
+					set_country_flag = USA_rework_european_war_seen
+					country_event = { id = USA_rework.13 days = 1 }
+				}
+				if = {
+					limit = {
 						check_variable = { USA_rework_public_isolationism > 60 }
 						power_balance_value = { id = USA_rework_foreign_policy value > 0.39 }
 						NOT = { has_idea = USA_rework_house_divided }

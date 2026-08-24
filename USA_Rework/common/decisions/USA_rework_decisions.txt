@@ -49,6 +49,92 @@ USA_rework_congress_decisions = {
 }
 
 USA_rework_foreign_policy_decisions = {
+	USA_rework_lend_lease_britain = {
+		icon = generic_positive_trade_relations
+		cost = 40
+		days_re_enable = 180
+		visible = { has_country_flag = USA_rework_lend_lease_unlocked }
+		available = {
+			check_variable = { USA_rework_lend_lease_capacity > 1 }
+			ENG = { exists = yes has_war = yes }
+		}
+		complete_effect = {
+			subtract_from_variable = { USA_rework_lend_lease_capacity = 2 }
+			ENG = {
+				add_offsite_building = { type = arms_factory level = 1 }
+				add_opinion_modifier = { target = ROOT modifier = USA_rework_lend_lease_aid_opinion }
+			}
+			USA_rework_shift_interventionist_small = yes
+		}
+		ai_will_do = { factor = 6 }
+	}
+	USA_rework_lend_lease_soviet_union = {
+		icon = generic_positive_trade_relations
+		cost = 50
+		days_re_enable = 180
+		visible = { has_country_flag = USA_rework_lend_lease_unlocked }
+		available = {
+			check_variable = { USA_rework_lend_lease_capacity > 2 }
+			SOV = { exists = yes has_war = yes }
+		}
+		complete_effect = {
+			subtract_from_variable = { USA_rework_lend_lease_capacity = 3 }
+			SOV = {
+				add_offsite_building = { type = arms_factory level = 1 }
+				add_opinion_modifier = { target = ROOT modifier = USA_rework_lend_lease_aid_opinion }
+			}
+			USA_rework_shift_interventionist_small = yes
+		}
+		ai_will_do = { factor = 5 }
+	}
+	USA_rework_lend_lease_china = {
+		icon = generic_positive_trade_relations
+		cost = 35
+		days_re_enable = 180
+		visible = { has_country_flag = USA_rework_lend_lease_unlocked }
+		available = {
+			check_variable = { USA_rework_lend_lease_capacity > 1 }
+			CHI = { exists = yes has_war = yes }
+		}
+		complete_effect = {
+			subtract_from_variable = { USA_rework_lend_lease_capacity = 2 }
+			CHI = {
+				add_offsite_building = { type = arms_factory level = 1 }
+				add_opinion_modifier = { target = ROOT modifier = USA_rework_lend_lease_aid_opinion }
+			}
+			USA_rework_shift_interventionist_small = yes
+		}
+		ai_will_do = { factor = 4 }
+	}
+	USA_rework_embargo_japan = {
+		icon = generic_positive_trade_relations
+		cost = 75
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_limited_intervention_unlocked }
+		available = {
+			date > 1940.1.1
+			JAP = { exists = yes has_war = yes }
+		}
+		complete_effect = {
+			JAP = { add_opinion_modifier = { target = ROOT modifier = USA_rework_japanese_embargo_opinion } }
+			USA_rework_shift_interventionist_medium = yes
+			add_war_support = 0.03
+		}
+		ai_will_do = { factor = 8 }
+	}
+	USA_rework_atlantic_charter = {
+		icon = generic_positive_trade_relations
+		cost = 50
+		fire_only_once = yes
+		visible = { has_country_flag = USA_rework_lend_lease_unlocked }
+		available = { date > 1941.8.1 ENG = { exists = yes has_war = yes } }
+		complete_effect = {
+			add_ideas = USA_rework_atlantic_charter_spirit
+			ENG = { add_opinion_modifier = { target = ROOT modifier = USA_rework_atlantic_charter_opinion } }
+			add_political_power = 50
+		}
+		ai_will_do = { factor = 10 }
+	}
 	USA_rework_fireside_chat = {
 		icon = generic_speech
 		cost = 30
@@ -122,6 +208,29 @@ USA_rework_mobilization_decisions = {
 }
 
 USA_rework_war_plans = {
+	USA_rework_prepare_war_plan_red = {
+		icon = generic_position_armies
+		cost = 40
+		days_remove = 60
+		available = { ENG = { exists = yes } }
+		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_red_spirit days = 180 } navy_experience = 10 }
+		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+	USA_rework_prepare_war_plan_green = {
+		icon = generic_position_armies
+		cost = 35
+		days_remove = 45
+		available = { MEX = { exists = yes } }
+		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_green_spirit days = 180 } army_experience = 10 }
+		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
+	USA_rework_prepare_war_plan_violet = {
+		icon = generic_position_armies
+		cost = 35
+		days_remove = 45
+		remove_effect = { add_timed_idea = { idea = USA_rework_war_plan_violet_spirit days = 180 } army_experience = 10 }
+		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
+	}
 	USA_rework_prepare_war_plan_orange = {
 		icon = generic_position_armies
 		cost = 50

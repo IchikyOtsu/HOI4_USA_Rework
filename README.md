@@ -2,11 +2,14 @@
 
 Rework historique jouable des États-Unis pour HOI4 1.17.x. Il contient désormais :
 
-- un arbre américain de plus de 30 priorités, du New Deal à l'OTAN ;
+- un arbre américain de 38 priorités, du New Deal à l'OTAN ;
 - une Balance of Power isolationnisme/interventionnisme ;
 - un Congrès à soutien variable (100 sénateurs et 435 représentants) ;
 - cinq phases de mobilisation industrielle et une démobilisation ;
 - les War Plans Orange, Black et Rainbow Five ;
+- les plans de contingence historiques Red, Green et Violet ;
+- une capacité de prêt-bail limitée, partagée entre Grande-Bretagne, URSS et Chine ;
+- le discours de la quarantaine, les Quatre Libertés, l'embargo japonais et la Charte de l'Atlantique ;
 - des événements liés à l'opinion, aux élections, à la France et au Japon ;
 - un endgame historique : GI Bill, Bretton Woods, ONU, plan Marshall et endiguement ;
 - les localisations française et anglaise ;
