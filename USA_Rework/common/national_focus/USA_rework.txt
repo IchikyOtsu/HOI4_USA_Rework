@@ -7,7 +7,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_new_deal_continues
 		icon = GFX_goal_generic_improve_relations
-		x = 22
+		x = 30
 		y = 0
 		cost = 5
 		completion_reward = {
@@ -18,7 +18,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_wpa
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 22
+		x = 30
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_new_deal_continues }
@@ -32,7 +32,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_social_security
 		icon = GFX_goal_generic_improve_relations
-		x = 18
+		x = 26
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_wpa }
@@ -41,7 +41,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_agricultural_adjustment
 		icon = GFX_goal_generic_consumer_goods
-		x = 22
+		x = 30
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_wpa }
@@ -55,7 +55,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_fair_labor_standards
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 22
+		x = 30
 		y = 6
 		cost = 10
 		prerequisite = { focus = USA_rework_agricultural_adjustment }
@@ -68,7 +68,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_scientific_office
 		icon = GFX_goal_generic_scientific_exchange
-		x = 26
+		x = 34
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_wpa }
@@ -77,7 +77,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_manhattan_groundwork
 		icon = GFX_goal_generic_scientific_exchange
-		x = 26
+		x = 34
 		y = 6
 		cost = 7
 		prerequisite = { focus = USA_rework_scientific_office }
@@ -88,7 +88,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_neutrality_acts
 		icon = GFX_goal_generic_neutrality_focus
-		x = 32
+		x = 40
 		y = 0
 		cost = 5
 		completion_reward = { USA_rework_shift_isolationist_small = yes add_stability = 0.03 }
@@ -96,19 +96,17 @@ focus_tree = {
 	focus = {
 		id = USA_rework_limited_intervention
 		icon = GFX_goal_support_democracy
-		x = 30
+		x = 38
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_neutrality_acts }
-		mutually_exclusive = {
-			focus = USA_rework_fortress_america
-			focus = USA_rework_america_first
-			focus = USA_rework_suspend_persecution
-			focus = USA_rework_macarthur_plan
+		available = {
+			NOT = { has_country_flag = USA_rework_political_route_chosen }
+			has_war_support > 0.20
 		}
-		available = { has_war_support > 0.20 }
 		ai_will_do = { factor = 10 }
 		completion_reward = {
+			set_country_flag = USA_rework_political_route_chosen
 			USA_rework_shift_interventionist_medium = yes
 			add_war_support = 0.05
 			set_country_flag = USA_rework_limited_intervention_unlocked
@@ -117,7 +115,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_destroyers_for_bases
 		icon = GFX_goal_generic_navy_battleship
-		x = 30
+		x = 38
 		y = 4
 		cost = 7
 		prerequisite = { focus = USA_rework_limited_intervention }
@@ -131,7 +129,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_lend_lease_act
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 32
+		x = 40
 		y = 10
 		cost = 10
 		prerequisite = { focus = USA_rework_four_freedoms }
@@ -146,7 +144,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_reelect_roosevelt
 		icon = GFX_goal_generic_improve_relations
-		x = 30
+		x = 38
 		y = 6
 		cost = 5
 		prerequisite = { focus = USA_rework_destroyers_for_bases }
@@ -161,7 +159,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_four_freedoms
 		icon = GFX_goal_support_democracy
-		x = 30
+		x = 38
 		y = 8
 		cost = 5
 		prerequisite = { focus = USA_rework_reelect_roosevelt }
@@ -174,7 +172,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_arsenal_of_democracy
 		icon = GFX_goal_generic_production
-		x = 32
+		x = 40
 		y = 12
 		cost = 10
 		prerequisite = { focus = USA_rework_lend_lease_act }
@@ -188,23 +186,22 @@ focus_tree = {
 	focus = {
 		id = USA_rework_fortress_america
 		icon = GFX_goal_generic_fortify_city
-		x = 36
+		x = 44
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_neutrality_acts }
-		mutually_exclusive = {
-			focus = USA_rework_limited_intervention
-			focus = USA_rework_america_first
-			focus = USA_rework_suspend_persecution
-			focus = USA_rework_macarthur_plan
-		}
+		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
-		completion_reward = { USA_rework_shift_isolationist_large = yes add_ideas = USA_rework_fortress_america_spirit }
+		completion_reward = {
+			set_country_flag = USA_rework_political_route_chosen
+			USA_rework_shift_isolationist_large = yes
+			add_ideas = USA_rework_fortress_america_spirit
+		}
 	}
 	focus = {
 		id = USA_rework_hemisphere_first
 		icon = GFX_goal_generic_major_alliance
-		x = 36
+		x = 44
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_fortress_america }
@@ -213,7 +210,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_continental_defense
 		icon = GFX_goal_generic_fortify_city
-		x = 36
+		x = 44
 		y = 6
 		cost = 10
 		prerequisite = { focus = USA_rework_hemisphere_first }
@@ -224,7 +221,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_defense_industrial_base
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 24
+		x = 32
 		y = 8
 		cost = 10
 		prerequisite = { focus = USA_rework_fair_labor_standards }
@@ -240,7 +237,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_giant_wakes
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 28
+		x = 36
 		y = 14
 		cost = 10
 		prerequisite = { focus = USA_rework_defense_industrial_base }
@@ -256,7 +253,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_usace_projects
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 28
+		x = 36
 		y = 16
 		cost = 10
 		prerequisite = { focus = USA_rework_giant_wakes }
@@ -270,7 +267,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_wartime_industry
 		icon = GFX_goal_generic_production
-		x = 28
+		x = 36
 		y = 18
 		cost = 10
 		prerequisite = { focus = USA_rework_usace_projects }
@@ -288,7 +285,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_war_department
 		icon = GFX_goal_generic_military_sphere
-		x = 12
+		x = 20
 		y = 0
 		cost = 5
 		completion_reward = {
@@ -299,7 +296,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_selective_training_act
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 9
+		x = 17
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_war_department }
@@ -309,7 +306,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_army_modernization
 		icon = GFX_goal_generic_army_tanks
-		x = 7
+		x = 15
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
@@ -321,7 +318,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_army_air_corps
 		icon = GFX_goal_generic_air_fighter
-		x = 11
+		x = 19
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_selective_training_act }
@@ -333,7 +330,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_two_ocean_navy
 		icon = GFX_goal_generic_navy_battleship
-		x = 15
+		x = 23
 		y = 2
 		cost = 10
 		prerequisite = { focus = USA_rework_war_department }
@@ -348,7 +345,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_pacific_bases
 		icon = GFX_goal_generic_navy_cruiser
-		x = 15
+		x = 23
 		y = 4
 		cost = 10
 		prerequisite = { focus = USA_rework_two_ocean_navy }
@@ -357,7 +354,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_rainbow_plans
 		icon = GFX_goal_generic_position_armies
-		x = 11
+		x = 19
 		y = 6
 		cost = 7
 		prerequisite = { focus = USA_rework_army_modernization }
@@ -367,7 +364,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_joint_chiefs
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 11
+		x = 19
 		y = 8
 		cost = 10
 		prerequisite = { focus = USA_rework_rainbow_plans }
@@ -378,7 +375,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_manhattan_project
 		icon = GFX_goal_generic_scientific_exchange
-		x = 24
+		x = 32
 		y = 20
 		cost = 10
 		prerequisite = { focus = USA_rework_wartime_industry }
@@ -394,7 +391,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_victory_program
 		icon = GFX_goal_generic_demand_territory
-		x = 29
+		x = 37
 		y = 20
 		cost = 10
 		prerequisite = { focus = USA_rework_wartime_industry }
@@ -404,7 +401,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_gi_bill
 		icon = GFX_goal_generic_improve_relations
-		x = 25
+		x = 33
 		y = 22
 		cost = 10
 		prerequisite = { focus = USA_rework_victory_program }
@@ -414,7 +411,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_bretton_woods
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 29
+		x = 37
 		y = 22
 		cost = 10
 		prerequisite = { focus = USA_rework_victory_program }
@@ -424,7 +421,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_united_nations
 		icon = GFX_goal_generic_major_alliance
-		x = 33
+		x = 41
 		y = 22
 		cost = 10
 		prerequisite = { focus = USA_rework_victory_program }
@@ -434,7 +431,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_orderly_demobilization
 		icon = GFX_goal_generic_consumer_goods
-		x = 25
+		x = 33
 		y = 24
 		cost = 7
 		prerequisite = { focus = USA_rework_gi_bill }
@@ -444,7 +441,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_marshall_plan
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 29
+		x = 37
 		y = 24
 		cost = 10
 		prerequisite = { focus = USA_rework_bretton_woods }
@@ -454,7 +451,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_containment
 		icon = GFX_goal_anti_comintern_pact
-		x = 33
+		x = 41
 		y = 24
 		cost = 10
 		prerequisite = { focus = USA_rework_united_nations }
@@ -470,7 +467,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_north_atlantic_treaty
 		icon = GFX_goal_generic_major_alliance
-		x = 31
+		x = 39
 		y = 26
 		cost = 10
 		prerequisite = { focus = USA_rework_marshall_plan }
@@ -485,17 +482,13 @@ focus_tree = {
 	focus = {
 		id = USA_rework_suspend_persecution
 		icon = GFX_goal_generic_improve_relations
-		x = 2
+		x = 10
 		y = 0
 		cost = 5
-		mutually_exclusive = {
-			focus = USA_rework_limited_intervention
-			focus = USA_rework_fortress_america
-			focus = USA_rework_america_first
-			focus = USA_rework_macarthur_plan
-		}
+		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
+			set_country_flag = USA_rework_political_route_chosen
 			add_popularity = { ideology = communism popularity = 0.05 }
 			add_ideas = USA_rework_tolerated_left
 		}
@@ -503,7 +496,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_ware_group
 		icon = GFX_goal_generic_scientific_exchange
-		x = 2
+		x = 10
 		y = 2
 		cost = 7
 		prerequisite = { focus = USA_rework_suspend_persecution }
@@ -516,7 +509,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_end_monarchism
 		icon = GFX_goal_generic_major_alliance
-		x = 2
+		x = 10
 		y = 4
 		cost = 7
 		prerequisite = { focus = USA_rework_ware_group }
@@ -529,7 +522,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_full_desegregation
 		icon = GFX_goal_support_democracy
-		x = 0
+		x = 8
 		y = 6
 		cost = 10
 		prerequisite = { focus = USA_rework_end_monarchism }
@@ -547,7 +540,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_union_representation
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 4
+		x = 12
 		y = 6
 		cost = 10
 		prerequisite = { focus = USA_rework_end_monarchism }
@@ -565,7 +558,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_red_america
 		icon = GFX_goal_generic_military_sphere
-		x = 2
+		x = 10
 		y = 8
 		cost = 7
 		prerequisite = { focus = USA_rework_full_desegregation focus = USA_rework_union_representation }
@@ -579,7 +572,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_align_moscow
 		icon = GFX_goal_generic_major_alliance
-		x = 0
+		x = 8
 		y = 10
 		cost = 10
 		prerequisite = { focus = USA_rework_red_america }
@@ -592,7 +585,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_align_yanan
 		icon = GFX_goal_generic_major_alliance
-		x = 4
+		x = 12
 		y = 10
 		cost = 10
 		prerequisite = { focus = USA_rework_red_america }
@@ -605,7 +598,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_demand_decolonization
 		icon = GFX_goal_generic_demand_territory
-		x = 2
+		x = 10
 		y = 12
 		cost = 10
 		prerequisite = { focus = USA_rework_align_moscow focus = USA_rework_align_yanan }
@@ -623,17 +616,13 @@ focus_tree = {
 	focus = {
 		id = USA_rework_america_first
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 44
+		x = 52
 		y = 0
 		cost = 5
-		mutually_exclusive = {
-			focus = USA_rework_limited_intervention
-			focus = USA_rework_fortress_america
-			focus = USA_rework_suspend_persecution
-			focus = USA_rework_macarthur_plan
-		}
+		available = { NOT = { has_country_flag = USA_rework_political_route_chosen } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
+			set_country_flag = USA_rework_political_route_chosen
 			add_popularity = { ideology = fascism popularity = 0.05 }
 			add_ideas = USA_rework_america_first_spirit
 		}
@@ -641,7 +630,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_rally_populists
 		icon = GFX_goal_generic_improve_relations
-		x = 44
+		x = 52
 		y = 2
 		cost = 7
 		prerequisite = { focus = USA_rework_america_first }
@@ -654,7 +643,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_ally_silver_shirts
 		icon = GFX_goal_anti_comintern_pact
-		x = 44
+		x = 52
 		y = 4
 		cost = 7
 		prerequisite = { focus = USA_rework_rally_populists }
@@ -667,7 +656,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_recruit_bund
 		icon = GFX_goal_generic_military_sphere
-		x = 42
+		x = 50
 		y = 6
 		cost = 7
 		prerequisite = { focus = USA_rework_ally_silver_shirts }
@@ -680,7 +669,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_voter_registration_act
 		icon = GFX_goal_generic_improve_relations
-		x = 46
+		x = 54
 		y = 6
 		cost = 7
 		prerequisite = { focus = USA_rework_ally_silver_shirts }
@@ -693,7 +682,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_second_american_civil_war
 		icon = GFX_goal_generic_military_sphere
-		x = 44
+		x = 52
 		y = 8
 		cost = 5
 		prerequisite = { focus = USA_rework_recruit_bund }
@@ -709,7 +698,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_honor_confederacy
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 44
+		x = 52
 		y = 10
 		cost = 7
 		prerequisite = { focus = USA_rework_second_american_civil_war }
@@ -723,7 +712,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_war_powers_act
 		icon = GFX_goal_generic_demand_territory
-		x = 44
+		x = 52
 		y = 12
 		cost = 10
 		prerequisite = { focus = USA_rework_honor_confederacy }
@@ -736,7 +725,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_hemispheric_hegemony
 		icon = GFX_goal_generic_demand_territory
-		x = 44
+		x = 52
 		y = 14
 		cost = 10
 		prerequisite = { focus = USA_rework_war_powers_act }
@@ -749,7 +738,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_global_hegemony
 		icon = GFX_goal_generic_major_alliance
-		x = 44
+		x = 52
 		y = 16
 		cost = 10
 		prerequisite = { focus = USA_rework_hemispheric_hegemony }
@@ -766,18 +755,16 @@ focus_tree = {
 	focus = {
 		id = USA_rework_macarthur_plan
 		icon = GFX_goal_generic_military_sphere
-		x = 54
+		x = 62
 		y = 0
 		cost = 5
-		mutually_exclusive = {
-			focus = USA_rework_limited_intervention
-			focus = USA_rework_fortress_america
-			focus = USA_rework_suspend_persecution
-			focus = USA_rework_america_first
+		available = {
+			NOT = { has_country_flag = USA_rework_political_route_chosen }
+			OR = { has_stability < 0.55 fascism > 0.15 communism > 0.15 }
 		}
-		available = { OR = { has_stability < 0.55 fascism > 0.15 communism > 0.15 } }
 		ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
 		completion_reward = {
+			set_country_flag = USA_rework_political_route_chosen
 			add_popularity = { ideology = neutrality popularity = 0.10 }
 			add_ideas = USA_rework_macarthur_emergency_plan
 			add_command_power = 25
@@ -786,7 +773,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_emergency_government
 		icon = GFX_goal_generic_military_sphere
-		x = 54
+		x = 62
 		y = 2
 		cost = 7
 		prerequisite = { focus = USA_rework_macarthur_plan }
@@ -802,7 +789,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_american_caesar
 		icon = GFX_goal_generic_military_sphere
-		x = 52
+		x = 60
 		y = 4
 		cost = 7
 		prerequisite = { focus = USA_rework_emergency_government }
@@ -817,7 +804,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_restore_republic
 		icon = GFX_goal_support_democracy
-		x = 56
+		x = 64
 		y = 4
 		cost = 7
 		prerequisite = { focus = USA_rework_emergency_government }
@@ -834,7 +821,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_rebuild_monroe_doctrine
 		icon = GFX_goal_generic_major_alliance
-		x = 54
+		x = 62
 		y = 6
 		cost = 10
 		prerequisite = { focus = USA_rework_american_caesar focus = USA_rework_restore_republic }
@@ -847,7 +834,7 @@ focus_tree = {
 	focus = {
 		id = USA_rework_continental_arsenal
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 54
+		x = 62
 		y = 8
 		cost = 10
 		prerequisite = { focus = USA_rework_rebuild_monroe_doctrine }
